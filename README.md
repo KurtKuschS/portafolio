@@ -74,6 +74,39 @@ npm run dev
 - `npm run preview`: previsualiza build local
 - `npm run lint`: ejecuta ESLint
 
+## Deploy Automatico en Vercel
+
+Este repositorio incluye workflow de GitHub Actions en:
+
+- `.github/workflows/vercel-deploy.yml`
+
+Se ejecuta automaticamente en cada push a `main` y publica en Vercel (produccion).
+
+### 1. Crear proyecto en Vercel
+
+- Importa el repo `KurtKuschS/portafolio` en Vercel.
+
+### 2. Configurar secretos en GitHub
+
+En `GitHub > Settings > Secrets and variables > Actions`, crea:
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+Para obtener los IDs puedes usar:
+
+```bash
+npx vercel login
+npx vercel link
+cat .vercel/project.json
+```
+
+### 3. Activar deploy
+
+- Haz push a `main`.
+- GitHub Actions ejecutara build y deploy automaticamente en Vercel.
+
 ## Secciones del Portafolio
 
 - `Hero`: presentacion principal con CTA y fondo neural interactivo
