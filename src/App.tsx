@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 
 const Home = lazy(() => import('./pages/Home'));
 const ProjectDetails = lazy(() => import('./pages/ProjectDetails'));
@@ -80,6 +81,7 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetails />} />
         </Routes>
       </Suspense>
+      <Analytics />
     </>
   );
 }
