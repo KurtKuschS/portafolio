@@ -29,6 +29,8 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
             alt={project.title}
             loading="lazy"
             decoding="async"
+            fetchPriority="low"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="h-full w-full object-cover"
           />
         ) : (

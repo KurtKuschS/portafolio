@@ -87,6 +87,8 @@ const ProjectDetails = () => {
                     alt={`${project.title} screenshot ${index + 1}`}
                     loading="lazy"
                     decoding="async"
+                    fetchPriority="low"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="h-64 w-full object-cover"
                   />
                 </div>

@@ -36,7 +36,7 @@ Este proyecto demuestra un profundo entendimiento de:
 El simulador permite crear repositorios, rastrear cambios, realizar commits y navegar entre diferentes versiones del código, replicando el comportamiento core de Git.`,
     technologies: ['C', 'Estructuras de Datos', 'Manejo de Archivos', 'Algoritmos'],
     filters: ['C', 'Systems'],
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=80',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
       'https://placehold.co/1200x720/0a0a0a/7dd3fc?text=Git+Simulator+Architecture',
       'https://placehold.co/1200x720/0a0a0a/a78bfa?text=Git+Simulator+Console+Flow',
@@ -73,7 +73,7 @@ Características principales:
 La aplicación mejora significativamente la eficiencia de los vendedores, reduce errores en pedidos y facilita la gestión centralizada de ventas.`,
     technologies: ['JavaScript', 'React', 'Node.js', 'REST API', 'Git'],
     filters: ['React', 'Systems'],
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1100&q=80',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
       'https://placehold.co/1200x720/0a0a0a/60a5fa?text=Order+App+Dashboard',
       'https://placehold.co/1200x720/0a0a0a/22d3ee?text=Order+Sync+Workflow',
@@ -108,7 +108,7 @@ Este proyecto incorpora:
 - TypeScript para type safety`,
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
     filters: ['React'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1100&q=80',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
       'https://placehold.co/1200x720/0a0a0a/818cf8?text=Portfolio+Hero+Scene',
       'https://placehold.co/1200x720/0a0a0a/06b6d4?text=Portfolio+Project+Dashboard',
