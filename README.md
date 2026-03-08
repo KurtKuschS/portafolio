@@ -74,6 +74,40 @@ npm run dev
 - `npm run preview`: previsualiza build local
 - `npm run lint`: ejecuta ESLint
 
+## Formulario de Contacto con EmailJS
+
+El formulario de contacto puede enviar mensajes reales usando EmailJS.
+
+### 1. Instalar dependencias
+
+Ya incluida en el proyecto:
+
+- `@emailjs/browser`
+
+### 2. Configurar variables de entorno
+
+Crea tu archivo `.env` tomando como base `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Completa con tus valores:
+
+```bash
+VITE_EMAILJS_SERVICE_ID=...
+VITE_EMAILJS_TEMPLATE_ID=...
+VITE_EMAILJS_PUBLIC_KEY=...
+```
+
+### 3. Reiniciar entorno de desarrollo
+
+```bash
+npm run dev
+```
+
+Si las variables no están definidas, el formulario mostrará un mensaje de configuración pendiente.
+
 ## Deploy Automatico en Vercel
 
 Este repositorio incluye workflow de GitHub Actions en:

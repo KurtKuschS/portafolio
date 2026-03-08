@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 
@@ -8,12 +9,47 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [isError, setIsError] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('¡Mensaje enviado! Te responderé pronto.');
-    setFormData({ name: '', email: '', message: '' });
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setIsError(true);
+      setStatusMessage('Falta configurar EmailJS en variables de entorno.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setIsError(false);
+      setStatusMessage(null);
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        { publicKey }
+      );
+
+      setStatusMessage('Mensaje enviado correctamente. Te responderé pronto.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      setIsError(true);
+      setStatusMessage('No se pudo enviar el mensaje. Intenta nuevamente en unos minutos.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -134,10 +170,21 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full py-4 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold glow-button"
               >
-                Enviar Mensaje
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </motion.button>
+
+              {statusMessage && (
+                <p
+                  className={`text-sm ${
+                    isError ? 'text-rose-300' : 'text-emerald-300'
+                  }`}
+                >
+                  {statusMessage}
+                </p>
+              )}
             </div>
           </motion.form>
         </div>
