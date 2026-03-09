@@ -1,5 +1,5 @@
+import { memo, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import {
   PolarGrid,
   PolarAngleAxis,
@@ -19,7 +19,7 @@ interface SkillRadarChartProps {
   data: SkillRadarDatum[];
 }
 
-const SkillRadarChart = ({ data }: SkillRadarChartProps) => {
+const SkillRadarChart = memo(({ data }: SkillRadarChartProps) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -97,6 +97,8 @@ const SkillRadarChart = ({ data }: SkillRadarChartProps) => {
       </div>
     </motion.div>
   );
-};
+});
+
+SkillRadarChart.displayName = 'SkillRadarChart';
 
 export default SkillRadarChart;

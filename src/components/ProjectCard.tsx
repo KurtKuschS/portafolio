@@ -1,5 +1,7 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import type { Project } from '../data/projects';
+import { ANIMATION_TIMINGS } from '../constants/animations';
 
 interface ProjectCardProps {
   project: Project;
@@ -7,14 +9,14 @@ interface ProjectCardProps {
   onClick: () => void;
 }
 
-const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
+const ProjectCard = memo(({ project, index, onClick }: ProjectCardProps) => {
   return (
     <motion.div
       layout
       initial={{ opacity: 0, y: 26 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
-      transition={{ duration: 0.35, delay: index * 0.05 }}
+      transition={{ duration: ANIMATION_TIMINGS.duration.card, delay: index * ANIMATION_TIMINGS.stagger.short }}
       whileHover={{ y: -10 }}
       onClick={onClick}
       className="glass-effect rounded-xl p-6 cursor-pointer group"
@@ -81,6 +83,8 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
       </motion.button>
     </motion.div>
   );
-};
+});
+
+ProjectCard.displayName = 'ProjectCard';
 
 export default ProjectCard;
