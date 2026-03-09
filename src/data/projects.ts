@@ -227,6 +227,73 @@ Enfoque tecnico:
       'Arquitectura MVC desacoplada y preparada para evolucion funcional',
     ],
   },
+  {
+    id: 'lash-kingdom-booking-platform',
+    title: 'Lash Kingdom - Plataforma de Reservas para Salon de Belleza',
+    shortDescription:
+      'Plataforma web en Django para reservas online, gestion operativa y control de disponibilidad con proteccion contra dobles reservas.',
+    fullDescription: `Lash Kingdom es una plataforma web de gestion de citas desarrollada con Django para un salon especializado en extensiones de pestanas y tratamientos de belleza.
+
+Problema que resuelve:
+- Elimina la gestion manual por mensajeria o llamadas que genera dobles reservas y perdida de trazabilidad.
+- Permite que clientas reserven de forma autonoma en tiempo real.
+- Entrega visibilidad operativa completa del estado de cada cita.
+- Garantiza a nivel de base de datos que un horario no puede reservarse dos veces.
+
+Enfoque tecnico:
+- Control de concurrencia con transacciones atomicas y select_for_update().
+- Integridad de datos con UniqueConstraint en reservas y slots de disponibilidad.
+- Seguridad transversal con middleware de rate limiting y security headers.
+- Operacion productiva con configuracion multi-entorno (SQLite en desarrollo y PostgreSQL en produccion).`,
+    technologies: [
+      'Python 3',
+      'Django 5.2',
+      'Django ORM',
+      'PostgreSQL',
+      'SQLite',
+      'Tailwind CSS',
+      'Gunicorn',
+      'WhiteNoise',
+      'Pillow',
+      'python-dotenv',
+      'Docker',
+      'Render',
+    ],
+    filters: ['Systems'],
+    image: 'https://images.unsplash.com/photo-1522337094846-8a818eb186f3?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    screenshots: [
+      'https://placehold.co/1200x720/0a0a0a/f472b6?text=Lash+Kingdom+Booking+Flow',
+      'https://placehold.co/1200x720/0a0a0a/ec4899?text=Lash+Kingdom+Admin+Dashboard',
+    ],
+    diagram: {
+      architecture: [
+        'core: configuracion global, middleware de seguridad y ruteo raiz',
+        'accounts: autenticacion, registro y ClientProfile',
+        'services: catalogo de servicios y AvailabilitySlot',
+        'bookings: creacion de Booking y dashboard administrativo',
+        'pages: contenido publico editable (sobre nosotros y galeria)',
+        'ORM Django: acceso exclusivo a datos con modelo relacional',
+      ],
+      dataFlow: [
+        'La clienta se registra y se crea su ClientProfile asociado al usuario.',
+        'Selecciona servicio, fecha y consulta slots activos no reservados.',
+        'Al confirmar, el sistema abre transaction.atomic() y bloquea slot con select_for_update().',
+        'Si el slot sigue libre, se persiste Booking en estado pending; si no, se informa conflicto.',
+        'La administracion gestiona estados (pending, confirmed, completed, cancelled).',
+        'Middlewares aplican rate limit, security headers y auditoria de eventos criticos.',
+      ],
+    },
+    highlights: [
+      'Control de concurrencia con SELECT FOR UPDATE para eliminar race conditions',
+      'UniqueConstraint en Booking y AvailabilitySlot para evitar dobles reservas en BD',
+      'Rate limiting por IP en login, registro y creacion de reservas con respuesta HTTP 429',
+      'Middleware de seguridad con HSTS, CSP, X-Frame-Options y X-Content-Type-Options',
+      'Logging estructurado de eventos criticos (registro, reserva, limite excedido, conflictos)',
+      'Configuracion production-ready con DEBUG=False, SECRET_KEY por entorno y ALLOWED_HOSTS dinamico',
+      'Arquitectura modular por apps de dominio sin dependencias circulares',
+      'Despliegue containerizado con Docker + Render para entorno estable de produccion',
+    ],
+  },
 ];
 
 export const getProjectById = (id: string): Project | undefined => {
