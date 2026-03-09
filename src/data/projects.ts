@@ -294,6 +294,74 @@ Enfoque tecnico:
       'Despliegue containerizado con Docker + Render para entorno estable de produccion',
     ],
   },
+  {
+    id: 'sales-inventory-admin-system',
+    title: 'Sistema Administrativo de Ventas e Inventario',
+    shortDescription:
+      'Sistema web empresarial para gestionar inventario, ventas, entradas de proveedores, clientes y reportes con auditoria y control por roles.',
+    fullDescription: `Sistema web de administracion empresarial desarrollado como proyecto de tesis universitaria.
+
+Problema que resuelve:
+- Reemplaza gestion manual en hojas de calculo con una plataforma centralizada y multiusuario.
+- Evita inconsistencias de stock y falta de trazabilidad en operaciones comerciales.
+- Provee control de acceso por roles, integridad de datos y auditoria transversal.
+
+Enfoque tecnico:
+- Gestion integral del ciclo operativo: productos, pedidos, entradas, clientes y reportes.
+- Operaciones criticas en transacciones atomicas para preservar consistencia del inventario.
+- Endpoint de reportes con filtros dinamicos y joins complejos para analisis comercial.
+- Hardening de seguridad HTTP y registro automatico de actividad por usuario y modelo.`,
+    technologies: [
+      'PHP 8.x',
+      'Laravel 11',
+      'Eloquent ORM',
+      'MySQL',
+      'Blade',
+      'Tailwind CSS',
+      'Vite',
+      'JavaScript',
+      'Spatie Laravel Permission',
+      'bepsvpt/secure-headers',
+      'SweetAlert2',
+      'Font Awesome',
+      'Carbon',
+    ],
+    filters: ['Systems'],
+    image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    screenshots: [
+      'https://placehold.co/1200x720/0a0a0a/f59e0b?text=Sales+Inventory+Dashboard',
+      'https://placehold.co/1200x720/0a0a0a/84cc16?text=Orders+And+Reports+Module',
+    ],
+    diagram: {
+      architecture: [
+        'Modelos Eloquent: User, Producto, Categoria, Marca, Cliente, Pedido, Entrada, HistorialActividad',
+        'Controladores por modulo: productos, pedidos, entradas, reportes, usuarios y roles',
+        'Vistas Blade por dominio con layout compartido para UI consistente',
+        'Autorizacion RBAC con middleware auth + Spatie Laravel Permission',
+        'Capa transversal de auditoria con Trait RegistraActividad sobre eventos Eloquent',
+        'Capa de seguridad HTTP con secure-headers alineada a OWASP',
+      ],
+      dataFlow: [
+        'El usuario inicia sesion y el sistema habilita acciones segun rol (Admin, Gestor, Vendedor).',
+        'Desde dashboard se consumen indicadores de ventas, clientes, pedidos y notificaciones.',
+        'Al crear pedido, se agregan productos y cantidades; una transaccion actualiza stock y totales con IVA.',
+        'Al registrar entrada, se asocia proveedor-producto y se actualiza inventario con trazabilidad.',
+        'El modulo de reportes ejecuta consultas con joins y filtros por fecha, marca y categoria.',
+        'Las vistas consumen endpoint JSON para analitica dinamica de ventas por producto.',
+        'Cada operacion CRUD dispara auditoria automatica con usuario, IP y cambios previos/nuevos.',
+      ],
+    },
+    highlights: [
+      'Trait reutilizable RegistraActividad para auditoria automatica (created, updated, deleted)',
+      'RBAC con tres niveles (Admin, Gestor, Vendedor) y permisos granulares por accion',
+      'DB::transaction() en creacion de pedidos para atomicidad de stock y totales',
+      'Relacion M:N Pedido-Producto con pivote pedido_producto (cantidad, regalo)',
+      'Endpoint JSON /reportes/ventas-productos-data con joins, filtros condicionales y agrupacion',
+      'Listados con paginacion y filtros combinados sin recarga completa de pagina',
+      'Hardening HTTP con CSP, HSTS, X-Frame-Options y X-Content-Type-Options',
+      'Arquitectura MVC escalable con separacion clara de responsabilidades',
+    ],
+  },
 ];
 
 export const getProjectById = (id: string): Project | undefined => {
