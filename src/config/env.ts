@@ -12,8 +12,16 @@ const validateEnv = (): EnvConfig => {
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   if (!serviceId || !templateId || !publicKey) {
-    console.warn('⚠️ EmailJS no está configurado. El formulario de contacto estará deshabilitado.');
-    console.warn('Variables requeridas: VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY');
+    const message = 'EmailJS no está configurado. El formulario de contacto estará deshabilitado.';
+    const requiredVars = 'Variables requeridas: VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY';
+
+    if (import.meta.env.DEV) {
+      console.info(message);
+      console.info(requiredVars);
+    } else {
+      console.warn(message);
+      console.warn(requiredVars);
+    }
     
     return {
       emailjs: {
