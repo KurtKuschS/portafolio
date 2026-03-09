@@ -159,45 +159,55 @@ const Contact = () => {
               {/* Honeypot field - campo oculto para detectar bots */}
               <input
                 type="text"
+                id="website"
                 name="website"
                 value={formData.honeypot}
                 onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
                 style={{ display: 'none' }}
                 tabIndex={-1}
                 autoComplete="off"
+                aria-hidden="true"
               />
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
+                <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
                 <input
                   type="text"
+                  id="contact-name"
+                  name="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                   minLength={2}
                   maxLength={100}
+                  autoComplete="name"
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors"
                   placeholder="Tu nombre"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                <label htmlFor="contact-email" className="block text-sm font-medium text-gray-300 mb-2">Email</label>
                 <input
                   type="email"
+                  id="contact-email"
+                  name="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
+                  autoComplete="email"
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors"
                   placeholder="tu@email.com"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-2">
                   Mensaje <span className="text-gray-500 text-xs">(mínimo 10 caracteres)</span>
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
