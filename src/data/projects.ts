@@ -154,6 +154,79 @@ Enfoque técnico:
       'Uso de TypeScript estricto para reducir errores y mejorar mantenibilidad',
     ],
   },
+  {
+    id: 'dap-transport-routing-system',
+    title: 'Sistema de Gestion de Transporte y Ruteo de Turnos DAP',
+    shortDescription:
+      'Aplicacion web interna en Laravel para gestionar turnos de traslado, optimizar rutas y generar reportes operativos con visualizacion en mapa.',
+    fullDescription: `Aplicacion web interna desarrollada con Laravel para gestionar empleados, direcciones de recogida, lugares comunes y turnos de traslado hacia aeropuerto.
+
+Problema que resuelve:
+- Coordinacion compleja de traslados de personal con multiples puntos de recogida y restricciones de llegada.
+- Reduccion de errores de planificacion manual y aumento de trazabilidad operativa.
+- Estandarizacion de la salida operativa para ejecucion en terreno.
+
+Enfoque tecnico:
+- Asignacion estructurada de empleados y direcciones por turno.
+- Optimizacion del orden de recogida con distancias reales de red vial.
+- Calculo automatico de horarios de paso para cumplir hora objetivo de llegada.
+- Exportacion de planificacion en Excel, PDF y PNG, con soporte de visualizacion geografica en mapa.`,
+    technologies: [
+      'PHP 8.2',
+      'Laravel 12',
+      'Eloquent ORM',
+      'Blade',
+      'MySQL/PostgreSQL',
+      'JavaScript',
+      'Alpine.js',
+      'Tailwind CSS',
+      'Vite',
+      'Leaflet',
+      'OpenStreetMap',
+      'OSRM',
+      'Laravel Excel',
+      'Dompdf',
+      'Browsershot',
+      'Docker',
+      'Nginx',
+      'PHP-FPM',
+    ],
+    filters: ['Systems'],
+    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    screenshots: [
+      'https://placehold.co/1200x720/0a0a0a/22d3ee?text=DAP+Routing+Dashboard',
+      'https://placehold.co/1200x720/0a0a0a/6366f1?text=DAP+Route+Map+And+Schedule',
+    ],
+    diagram: {
+      architecture: [
+        'Presentacion: Blade + Componentes UI + Mapa Leaflet',
+        'Aplicacion: Controladores (Empleado, Direccion, LugarComun, Turno)',
+        'Dominio: RutaOptimizerService + ScheduleCalculatorService',
+        'Routing: OSRM Table/Route + Heuristicas de optimizacion',
+        'Datos: Modelo relacional (empleados, turnos, rutas, ruta_puntos)',
+        'Exportacion: Excel/PDF/PNG para operacion',
+      ],
+      dataFlow: [
+        'El usuario registra o importa empleados y direcciones georreferenciadas.',
+        'Define turno con fecha, hora objetivo de llegada y parametros de intervalo.',
+        'Selecciona personal participante y ejecuta optimizacion de ruta.',
+        'El sistema consulta OSRM, calcula orden de recogida y persiste ruta + ruta_puntos.',
+        'Se calculan horarios estimados por punto en funcion de la llegada objetivo.',
+        'El usuario visualiza mapa y planilla, ajusta orden manual si lo requiere.',
+        'Al guardar ajustes se recalculan horarios y se exporta en Excel, PDF o PNG.',
+      ],
+    },
+    highlights: [
+      'Motor de optimizacion custom (TieredNearestNeighborOptimizer) con refinamiento 2-opt y or-opt',
+      'Matriz de distancias con OSRM y fallback automatico a Haversine ante fallos de API',
+      'Persistencia de geometria por tramo en ruta_puntos.geometry para renderizado inmediato en mapa',
+      'Recalculo automatico de horarios al optimizar o reordenar manualmente puntos',
+      'Modelo de turnos flexible con intervalos fijo/dinamico segun distancia',
+      'Manejo de lugares comunes sin perder coherencia temporal de la ruta',
+      'Pipeline operativo completo: alta/import, optimizacion, visualizacion y exportacion',
+      'Arquitectura MVC desacoplada y preparada para evolucion funcional',
+    ],
+  },
 ];
 
 export const getProjectById = (id: string): Project | undefined => {
