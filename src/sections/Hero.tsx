@@ -1,9 +1,11 @@
 import { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const AnimatedBackground = lazy(() => import('../components/AnimatedBackground'));
 
 const Hero = () => {
+  const { t } = useTranslation();
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -48,7 +50,7 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="text-secondary font-medium mb-4 tracking-wider uppercase"
           >
-            Junior Backend / Full Stack Developer
+            {t('hero.role')}
           </motion.p>
 
           <motion.h1
@@ -67,7 +69,7 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-xl md:text-2xl text-gray-300 mb-8"
           >
-            Ingeniero en Computación e Informática
+            {t('hero.degree')}
           </motion.h2>
 
           <motion.p
@@ -76,8 +78,7 @@ const Hero = () => {
             transition={{ delay: 0.7 }}
             className="text-gray-400 max-w-2xl mx-auto mb-12 text-lg"
           >
-            Desarrollo soluciones web enfocadas en backend, arquitectura modular y despliegue cloud,
-            integrando interfaces modernas cuando el producto lo requiere.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -90,7 +91,7 @@ const Hero = () => {
               onClick={scrollToProjects}
               className="glow-button px-8 py-4 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold hover:scale-105 transition-transform"
             >
-              Ver Proyectos
+              {t('hero.viewProjects')}
             </button>
 
             <a
@@ -98,7 +99,7 @@ const Hero = () => {
               download
               className="px-8 py-4 glass-effect rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Descargar CV
+              {t('hero.downloadCV')}
             </a>
 
             <a

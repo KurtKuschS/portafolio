@@ -1,16 +1,28 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import ProjectCard from '@components/ProjectCard';
-import { projects, PROJECT_FILTERS, type ProjectFilter } from '@data/projects';
+import { PROJECT_FILTERS, type ProjectFilter } from '@data/projects';
+import { useProjectsWithTranslations } from '@hooks/useProjectsWithTranslations';
 
 type DashboardFilter = (typeof PROJECT_FILTERS)[number];
 
 const Projects = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
+    const projects = useProjectsWithTranslations();
   const [activeFilter, setActiveFilter] = useState<DashboardFilter>('All');
   const [itemsPerView, setItemsPerView] = useState(3);
   const [startIndex, setStartIndex] = useState(0);
+
+  // Map filter values to translation keys
+  const filterTranslationMap: Record<string, string> = {
+    'All': 'projects.filters.all',
+    'C': 'projects.filters.c',
+    'React': 'projects.filters.react',
+    'Systems': 'projects.filters.systems',
+  };
 
   useEffect(() => {
     const updateItemsPerView = () => {
@@ -41,7 +53,7 @@ const Projects = () => {
     }
 
     return projects.filter((project) => project.filters.includes(activeFilter as ProjectFilter));
-  }, [activeFilter]);
+  }, [activeFilter, projects]);
 
   useEffect(() => {
     setStartIndex(0);
@@ -68,12 +80,11 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Proyectos <span className="gradient-text">Destacados</span>
+            {t('projects.title')} <span className="gradient-text">{t('projects.titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto" />
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            Una selección de proyectos que demuestran mis habilidades técnicas en desarrollo de software,
-            arquitectura de sistemas y resolución de problemas complejos.
+            {t('projects.description')}
           </p>
         </motion.div>
 
@@ -97,7 +108,7 @@ const Projects = () => {
                     : 'border-white/15 bg-surface/40 text-gray-300 hover:border-primary/40 hover:text-white'
                 }`}
               >
-                {filter}
+                {filterTranslationMap[filter] ? t(filterTranslationMap[filter]) : filter}
               </motion.button>
             );
           })}

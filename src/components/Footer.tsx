@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             className="text-gray-400 text-sm mb-4 md:mb-0"
           >
-            © {currentYear} Kurt Dereck Kusch Sepúlveda. Todos los derechos reservados.
+            {t('footer.copyright', { year: currentYear })}
           </motion.div>
 
           <div className="flex space-x-6">

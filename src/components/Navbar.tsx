@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MENU_ITEMS } from '@constants/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,7 +43,7 @@ const Navbar = () => {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
       >
-        Saltar al contenido principal
+        {t('nav.skipToContent')}
       </a>
 
       <motion.nav
@@ -60,26 +63,30 @@ const Navbar = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {MENU_ITEMS.map((item) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsOpen(false)}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
-              >
-                {item.name}
-              </motion.a>
-            ))}
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex space-x-8">
+              {MENU_ITEMS.map((item) => (
+                <motion.a
+                  key={item.key}
+                  href={item.href}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-300 hover:text-white transition-colors duration-200"
+                >
+                  {t(item.key)}
+                </motion.a>
+              ))}
+            </div>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen((prev) => !prev)}
-              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-label={isOpen ? t('nav.closeMenu') : t('nav.openMenu')}
               aria-expanded={isOpen}
               className="text-white p-2"
             >
@@ -107,12 +114,12 @@ const Navbar = () => {
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-3">
             {MENU_ITEMS.map((item) => (
               <a
-                key={item.name}
+                key={item.key}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className="rounded-md px-3 py-2 text-gray-200 transition-colors hover:bg-white/5 hover:text-white"
               >
-                {item.name}
+                {t(item.key)}
               </a>
             ))}
           </div>

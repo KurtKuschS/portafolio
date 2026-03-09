@@ -1,0 +1,310 @@
+{
+  "hero": {
+    "role": "Junior Backend / Full Stack Developer",
+    "name": "Kurt Dereck Kusch Sepúlveda",
+    "degree": "Ingeniero en Computación e Informática",
+    "description": "Desarrollo soluciones web enfocadas en backend, arquitectura modular y despliegue cloud, integrando interfaces modernas cuando el producto lo requiere.",
+    "viewProjects": "Ver Proyectos",
+    "downloadCV": "Descargar CV"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "timeline": "Timeline",
+    "philosophy": "Filosofía",
+    "contact": "Contacto",
+    "skipToContent": "Saltar al contenido principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "about": {
+    "title": "Sobre",
+    "titleHighlight": "Mí",
+    "paragraph1": "Ingeniero en Computación e Informática con experiencia en el desarrollo de sistemas web enfocados en gestión administrativa, plataformas de ventas y reservas.",
+    "paragraph2": "Con enfoque <strong>Junior Backend / Full Stack</strong>, me especializo en desarrollo backend con Python y Django, Django REST Framework, y PHP con Laravel, trabajando con bases de datos relacionales como PostgreSQL y MySQL.",
+    "paragraph3": "También cuento con experiencia en frontend moderno usando React y TypeScript, y en despliegue de aplicaciones en plataformas cloud como Render y Vercel. Mi foco es construir software mantenible, escalable y bien estructurado, siguiendo buenas prácticas de ingeniería."
+  },
+  "skills": {
+    "title": "Tech",
+    "titleHighlight": "Stack",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Bases de Datos",
+      "devops": "DevOps & Cloud",
+      "tools": "Herramientas",
+      "other": "Otros"
+    }
+  },
+  "philosophy": {
+    "title": "Engineering",
+    "titleHighlight": "Philosophy",
+    "principles": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Código legible y mantenible con nombres claros, responsabilidad única y convenciones consistentes."
+      },
+      "modularArchitecture": {
+        "title": "Arquitectura Modular",
+        "description": "Componentes desacoplados y reutilizables para evolucionar el sistema sin deuda técnica innecesaria."
+      },
+      "realOptimization": {
+        "title": "Optimización Real",
+        "description": "Mido y optimizo render, tamaño de bundle y carga percibida para una UX fluida en cualquier dispositivo."
+      },
+      "continuousLearning": {
+        "title": "Aprendizaje Continuo",
+        "description": "Me adapto rápido a nuevas herramientas y enfoques para resolver problemas complejos con criterio técnico."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "titleHighlight": "Destacados",
+    "description": "Una selección de proyectos que demuestran mis habilidades técnicas en desarrollo de software, arquitectura de sistemas y resolución de problemas complejos.",
+    "viewDetails": "Ver Detalles",
+    "filters": {
+      "all": "All",
+      "c": "C",
+      "react": "React",
+      "systems": "Systems"
+    }
+  },
+  "projectDetails": {
+    "backToProjects": "Volver a Proyectos",
+    "technologies": "Tecnologías",
+    "architecture": "Arquitectura",
+    "dataFlow": "Flujo de Datos",
+    "keyHighlights": "Puntos Clave",
+    "screenshots": "Capturas",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código"
+  },
+  "timeline": {
+    "title": "Mi",
+    "titleHighlight": "Timeline",
+    "events": {
+      "2019": {
+        "title": "Ingreso a Ingeniería en Computación e Informática",
+        "institution": "Universidad de Magallanes"
+      },
+      "2025": {
+        "title": "Finalización de carrera",
+        "institution": "Universidad de Magallanes"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "titleHighlight": "Profesional",
+    "subtitle": "Conectemos",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "whatsappButton": "Contactarme al +56 9 4288 6459",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Tu mensaje",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "success": "Mensaje enviado correctamente. Te responderé pronto.",
+      "errors": {
+        "spam": "Espera {{seconds}} segundos antes de enviar otro mensaje.",
+        "minLength": "El mensaje debe tener al menos 10 caracteres.",
+        "serviceUnavailable": "El servicio de contacto no está disponible en este momento.",
+        "configError": "Error de configuración del servicio. Contacta por otros medios.",
+        "serverError": "Error del servidor. Por favor, intenta más tarde.",
+        "networkError": "No se pudo enviar el mensaje. Verifica tu conexión."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Kurt Dereck Kusch Sepúlveda. Todos los derechos reservados."
+  },
+  "projectsData": {
+    "git-simulator": {
+      "title": "Simulador de Git en C",
+      "shortDescription": "Implementación de comandos init, add, commit, log y checkout utilizando estructuras de datos y manejo de archivos.",
+      "fullDescription": "Sistema completo que simula el funcionamiento interno de Git, implementando los comandos fundamentales del sistema de control de versiones.\n\nEste proyecto demuestra un profundo entendimiento de:\n- Estructuras de datos complejas\n- Manejo de archivos en C\n- Algoritmos de hash y gestión de estados\n- Diseño de sistemas de versionado\n\nEl simulador permite crear repositorios, rastrear cambios, realizar commits y navegar entre diferentes versiones del código, replicando el comportamiento core de Git.",
+      "technologies": ["C", "Estructuras de Datos", "Manejo de Archivos", "Algoritmos"],
+      "highlights": [
+        "Implementación completa de init, add, commit, log y checkout",
+        "Sistema de hash para identificación de commits",
+        "Gestión eficiente de memoria",
+        "Manejo de archivos binarios y texto"
+      ],
+      "diagram": {
+        "architecture": ["CLI Interface", "Command Parser", "File Index", "Commit Objects"],
+        "dataFlow": [
+          "El usuario ejecuta un comando en la CLI.",
+          "El parser interpreta argumentos y valida reglas.",
+          "El motor actualiza index y objetos de commit en disco.",
+          "El estado del repositorio se refleja en log y checkout."
+        ]
+      }
+    },
+    "order-taking-app": {
+      "title": "Aplicación de Toma de Pedidos",
+      "shortDescription": "Sistema para registrar pedidos en terreno para vendedores de una distribuidora de alimentos.",
+      "fullDescription": "Aplicación móvil/web diseñada para optimizar el proceso de toma de pedidos en terreno para distribuidoras de alimentos.\n\nCaracterísticas principales:\n- Interfaz intuitiva para vendedores en terreno\n- Catálogo de productos con búsqueda rápida\n- Gestión de clientes y ruteros\n- Sincronización de datos offline/online\n- Generación de reportes y estadísticas\n\nLa aplicación mejora significativamente la eficiencia de los vendedores, reduce errores en pedidos y facilita la gestión centralizada de ventas.",
+      "technologies": ["JavaScript", "React", "Node.js", "REST API", "Git"],
+      "highlights": [
+        "Interfaz responsive optimizada para tablets",
+        "Modo offline con sincronización automática",
+        "Validación de inventarios en tiempo real",
+        "Sistema de notificaciones para actualizaciones"
+      ],
+      "diagram": {
+        "architecture": ["Mobile UI", "REST API", "Sync Service", "SQL Database"],
+        "dataFlow": [
+          "El vendedor registra pedidos desde la interfaz mobile.",
+          "La app valida stock y cliente localmente para respuesta inmediata.",
+          "El servicio de sincronización envía cambios a la API REST.",
+          "La base SQL persiste pedidos y publica estado para reporting."
+        ]
+      }
+    },
+    "portfolio-website": {
+      "title": "Portafolio Personal",
+      "shortDescription": "SPA profesional para presentar perfil, stack y proyectos con arquitectura modular, SEO técnico y optimización de rendimiento.",
+      "fullDescription": "Sistema web tipo SPA, diseñado para comunicar experiencia en ingeniería de software mediante una interfaz moderna y mantenible.\n\nProblema que resuelve:\n- Centralizar experiencia, stack y evidencia técnica en una plataforma.\n- Presentar proyectos con contexto arquitectónico y flujo de funcionamiento.\n- Mejorar visibilidad profesional.\n\nEnfoque técnico:\n- Arquitectura modular por capas (pages, sections, components, data, constants, config).\n- Renderizado optimizado con lazy loading, code splitting y memoización de componentes.\n- Experiencia interactiva con animaciones controladas y soporte para reduced motion.\n- Integración de contacto con EmailJS y validaciones anti-spam en frontend.",
+      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "React Router DOM", "Recharts", "tsParticles", "EmailJS"],
+      "highlights": [
+        "Arquitectura modular escalable con separación clara de responsabilidades",
+        "Bundle splitting manual en Vite para mejorar caching y tiempo de carga inicial",
+        "ErrorBoundary, lazy loading y fallback UI para mayor resiliencia en producción",
+        "Formulario de contacto con validaciones tipadas, honeypot y rate limiting",
+        "Accesibilidad aplicada (skip link, labels asociadas, atributos ARIA clave)",
+        "SEO técnico completo: Open Graph, Twitter Cards, canonical y JSON-LD",
+        "Uso de TypeScript estricto para reducir errores y mejorar mantenibilidad"
+      ],
+      "diagram": {
+        "architecture": [
+          "Capa de Presentación (Pages + Sections)",
+          "Componentes Reutilizables (UI + Motion)",
+          "Capa de Datos Tipada (projects.ts)",
+          "Capa de Configuración (env + constants)",
+          "Servicios Externos (EmailJS + Vercel Analytics)"
+        ],
+        "dataFlow": [
+          "El usuario entra a la SPA y el router carga Home con secciones composables.",
+          "En Projects, el sistema aplica filtros tipados y renderiza tarjetas optimizadas.",
+          "Al abrir un proyecto, se consulta por id en el data layer y se construye la vista técnica.",
+          "En Contact, se validan campos y anti-spam; luego se envía el payload a EmailJS.",
+          "Se reportan métricas de uso con Vercel Analytics y Speed Insights."
+        ]
+      }
+    },
+    "dap-transport-routing-system": {
+      "title": "Sistema de Gestión de Transporte y Ruteo de Turnos DAP",
+      "shortDescription": "Aplicación web interna en Laravel para gestionar turnos de traslado, optimizar rutas y generar reportes operativos con visualización en mapa.",
+      "fullDescription": "Aplicación web interna desarrollada con Laravel para gestionar empleados, direcciones de recogida, lugares comunes y turnos de traslado hacia aeropuerto.\n\nProblema que resuelve:\n- Coordinación compleja de traslados de personal con múltiples puntos de recogida y restricciones de llegada.\n- Reducción de errores de planificación manual y aumento de trazabilidad operativa.\n- Estandarización de la salida operativa para ejecución en terreno.\n\nEnfoque técnico:\n- Asignación estructurada de empleados y direcciones por turno.\n- Optimización del orden de recogida con distancias reales de red vial.\n- Cálculo automático de horarios de paso para cumplir hora objetivo de llegada.\n- Exportación de planificación en Excel, PDF y PNG, con soporte de visualización geográfica en mapa.",
+      "technologies": ["PHP 8.2", "Laravel 12", "Eloquent ORM", "Blade", "MySQL/PostgreSQL", "JavaScript", "Alpine.js", "Tailwind CSS", "Vite", "Leaflet", "OpenStreetMap", "OSRM", "Laravel Excel", "Dompdf", "Browsershot", "Docker", "Nginx", "PHP-FPM"],
+      "highlights": [
+        "Motor de optimización custom (TieredNearestNeighborOptimizer) con refinamiento 2-opt y or-opt",
+        "Matriz de distancias con OSRM y fallback automático a Haversine ante fallos de API",
+        "Persistencia de geometría por tramo en ruta_puntos.geometry para renderizado inmediato en mapa",
+        "Recalculo automático de horarios al optimizar o reordenar manualmente puntos",
+        "Modelo de turnos flexible con intervalos fijo/dinámico según distancia",
+        "Manejo de lugares comunes sin perder coherencia temporal de la ruta",
+        "Pipeline operativo completo: alta/import, optimización, visualización y exportación",
+        "Arquitectura MVC desacoplada y preparada para evolución funcional"
+      ],
+      "diagram": {
+        "architecture": [
+          "Presentación: Blade + Componentes UI + Mapa Leaflet",
+          "Aplicación: Controladores (Empleado, Dirección, LugarComún, Turno)",
+          "Dominio: RutaOptimizerService + ScheduleCalculatorService",
+          "Routing: OSRM Table/Route + Heurísticas de optimización",
+          "Datos: Modelo relacional (empleados, turnos, rutas, ruta_puntos)",
+          "Exportación: Excel/PDF/PNG para operación"
+        ],
+        "dataFlow": [
+          "El usuario registra o importa empleados y direcciones georreferenciadas.",
+          "Define turno con fecha, hora objetivo de llegada y parámetros de intervalo.",
+          "Selecciona personal participante y ejecuta optimización de ruta.",
+          "El sistema consulta OSRM, calcula orden de recogida y persiste ruta + ruta_puntos.",
+          "Se calculan horarios estimados por punto en función de la llegada objetivo.",
+          "El usuario visualiza mapa y planilla, ajusta orden manual si lo requiere.",
+          "Al guardar ajustes se recalculan horarios y se exporta en Excel, PDF o PNG."
+        ]
+      }
+    },
+    "lash-kingdom-booking-platform": {
+      "title": "Lash Kingdom - Plataforma de Reservas para Salón de Belleza",
+      "shortDescription": "Plataforma web en Django para reservas online, gestión operativa y control de disponibilidad con protección contra dobles reservas.",
+      "fullDescription": "Lash Kingdom es una plataforma web de gestión de citas desarrollada con Django para un salón especializado en extensiones de pestañas y tratamientos de belleza.\n\nProblema que resuelve:\n- Elimina la gestión manual por mensajería o llamadas que genera dobles reservas y pérdida de trazabilidad.\n- Permite que clientas reserven de forma autónoma en tiempo real.\n- Entrega visibilidad operativa completa del estado de cada cita.\n- Garantiza a nivel de base de datos que un horario no puede reservarse dos veces.\n\nEnfoque técnico:\n- Control de concurrencia con transacciones atómicas y select_for_update().\n- Integridad de datos con UniqueConstraint en reservas y slots de disponibilidad.\n- Seguridad transversal con middleware de rate limiting y security headers.\n- Operación productiva con configuración multi-entorno (SQLite en desarrollo y PostgreSQL en producción).",
+      "technologies": ["Python 3", "Django 5.2", "Django ORM", "PostgreSQL", "SQLite", "Tailwind CSS", "Gunicorn", "WhiteNoise", "Pillow", "python-dotenv", "Docker", "Render"],
+      "highlights": [
+        "Control de concurrencia con SELECT FOR UPDATE para eliminar race conditions",
+        "UniqueConstraint en Booking y AvailabilitySlot para evitar dobles reservas en BD",
+        "Rate limiting por IP en login, registro y creación de reservas con respuesta HTTP 429",
+        "Middleware de seguridad con HSTS, CSP, X-Frame-Options y X-Content-Type-Options",
+        "Logging estructurado de eventos críticos (registro, reserva, límite excedido, conflictos)",
+        "Configuración production-ready con DEBUG=False, SECRET_KEY por entorno y ALLOWED_HOSTS dinámico",
+        "Arquitectura modular por apps de dominio sin dependencias circulares",
+        "Despliegue containerizado con Docker + Render para entorno estable de producción"
+      ],
+      "diagram": {
+        "architecture": [
+          "core: configuración global, middleware de seguridad y ruteo raíz",
+          "accounts: autenticación, registro y ClientProfile",
+          "services: catálogo de servicios y AvailabilitySlot",
+          "bookings: creación de Booking y dashboard administrativo",
+          "pages: contenido público editable (sobre nosotros y galería)",
+          "ORM Django: acceso exclusivo a datos con modelo relacional"
+        ],
+        "dataFlow": [
+          "La clienta se registra y se crea su ClientProfile asociado al usuario.",
+          "Selecciona servicio, fecha y consulta slots activos no reservados.",
+          "Al confirmar, el sistema abre transaction.atomic() y bloquea slot con select_for_update().",
+          "Si el slot sigue libre, se persiste Booking en estado pending; si no, se informa conflicto.",
+          "La administración gestiona estados (pending, confirmed, completed, cancelled).",
+          "Middlewares aplican rate limit, security headers y auditoría de eventos críticos."
+        ]
+      }
+    },
+    "sales-inventory-admin-system": {
+      "title": "Sistema Administrativo de Ventas e Inventario",
+      "shortDescription": "Sistema web empresarial para gestionar inventario, ventas, entradas de proveedores, clientes y reportes con auditoría y control por roles.",
+      "fullDescription": "Sistema web de administración empresarial desarrollado como proyecto de tesis universitaria.\n\nProblema que resuelve:\n- Reemplaza gestión manual en hojas de cálculo con una plataforma centralizada y multiusuario.\n- Evita inconsistencias de stock y falta de trazabilidad en operaciones comerciales.\n- Provee control de acceso por roles, integridad de datos y auditoría transversal.\n\nEnfoque técnico:\n- Gestión integral del ciclo operativo: productos, pedidos, entradas, clientes y reportes.\n- Operaciones críticas en transacciones atómicas para preservar consistencia del inventario.\n- Endpoint de reportes con filtros dinámicos y joins complejos para análisis comercial.\n- Hardening de seguridad HTTP y registro automático de actividad por usuario y modelo.",
+      "technologies": ["PHP 8.x", "Laravel 11", "Eloquent ORM", "MySQL", "Blade", "Tailwind CSS", "Vite", "JavaScript", "Spatie Laravel Permission", "bepsvpt/secure-headers", "SweetAlert2", "Font Awesome", "Carbon"],
+      "highlights": [
+        "Trait reutilizable RegistraActividad para auditoría automática (created, updated, deleted)",
+        "RBAC con tres niveles (Admin, Gestor, Vendedor) y permisos granulares por acción",
+        "DB::transaction() en creación de pedidos para atomicidad de stock y totales",
+        "Relación M:N Pedido-Producto con pivote pedido_producto (cantidad, regalo)",
+        "Endpoint JSON /reportes/ventas-productos-data con joins, filtros condicionales y agrupación",
+        "Listados con paginación y filtros combinados sin recarga completa de página",
+        "Hardening HTTP con CSP, HSTS, X-Frame-Options y X-Content-Type-Options",
+        "Arquitectura MVC escalable con separación clara de responsabilidades"
+      ],
+      "diagram": {
+        "architecture": [
+          "Modelos Eloquent: User, Producto, Categoría, Marca, Cliente, Pedido, Entrada, HistorialActividad",
+          "Controladores por módulo: productos, pedidos, entradas, reportes, usuarios y roles",
+          "Vistas Blade por dominio con layout compartido para UI consistente",
+          "Autorización RBAC con middleware auth + Spatie Laravel Permission",
+          "Capa transversal de auditoría con Trait RegistraActividad sobre eventos Eloquent",
+          "Capa de seguridad HTTP con secure-headers alineada a OWASP"
+        ],
+        "dataFlow": [
+          "El usuario inicia sesión y el sistema habilita acciones según rol (Admin, Gestor, Vendedor).",
+          "Desde dashboard se consumen indicadores de ventas, clientes, pedidos y notificaciones.",
+          "Al crear pedido, se agregan productos y cantidades; una transacción actualiza stock y totales con IVA.",
+          "Al registrar entrada, se asocia proveedor-producto y se actualiza inventario con trazabilidad.",
+          "El módulo de reportes ejecuta consultas con joins y filtros por fecha, marca y categoría.",
+          "Las vistas consumen endpoint JSON para analítica dinámica de ventas por producto.",
+          "Cada operación CRUD dispara auditoría automática con usuario, IP y cambios previos/nuevos."
+        ]
+      }
+    }
+  }
+}

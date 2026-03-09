@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getProjectById } from '@data/projects';
+import { useTranslation } from 'react-i18next';
+import { useProjectsWithTranslations } from '@hooks/useProjectsWithTranslations';
 import ArchitectureDiagram from '@components/ArchitectureDiagram';
 
 const ProjectDetails = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
-  const project = id ? getProjectById(id) : undefined;
+  const projects = useProjectsWithTranslations();
+  const project = id ? projects.find(p => p.id === id) : undefined;
 
   if (!project) {
     return (
@@ -17,7 +20,7 @@ const ProjectDetails = () => {
             onClick={() => navigate('/')}
             className="px-6 py-3 bg-primary rounded-lg hover:bg-primary/80 transition-colors"
           >
-            Volver al inicio
+            {t('projectDetails.backToProjects')}
           </button>
         </div>
       </div>
@@ -33,7 +36,7 @@ const ProjectDetails = () => {
           onClick={() => navigate('/')}
           className="mb-8 px-4 py-2 glass-effect rounded-lg hover:bg-white/10 transition-colors"
         >
-          ← Volver
+          ← {t('projectDetails.backToProjects')}
         </motion.button>
 
         <motion.div
@@ -50,7 +53,7 @@ const ProjectDetails = () => {
           </p>
 
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Tecnologías Utilizadas</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('projectDetails.technologies')}</h2>
             <div className="flex flex-wrap gap-3">
               {project.technologies.map((tech) => (
                 <span
@@ -65,7 +68,7 @@ const ProjectDetails = () => {
 
           {project.highlights && (
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Aspectos Técnicos Destacados</h2>
+              <h2 className="text-2xl font-semibold mb-4">{t('projectDetails.keyHighlights')}</h2>
               <ul className="space-y-3">
                 {project.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start text-gray-300">
@@ -78,7 +81,7 @@ const ProjectDetails = () => {
           )}
 
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Screenshots</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('projectDetails.screenshots')}</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {project.screenshots.map((screenshot, index) => (
                 <div key={screenshot} className="overflow-hidden rounded-xl border border-white/10">
@@ -96,21 +99,11 @@ const ProjectDetails = () => {
           </div>
 
           <div className="mb-8">
-            <h2 className="mb-4 text-2xl font-semibold">Arquitectura y Flujo</h2>
+            <h2 className="mb-4 text-2xl font-semibold">{t('projectDetails.architecture')} y {t('projectDetails.dataFlow')}</h2>
             <ArchitectureDiagram
               architecture={project.diagram.architecture}
               dataFlow={project.diagram.dataFlow}
             />
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Explicación Técnica</h2>
-            <p className="text-gray-300 leading-relaxed">
-              Este proyecto fue desarrollado siguiendo principios de arquitectura limpia y buenas prácticas
-              de ingeniería de software. Se priorizó la mantenibilidad del código, la escalabilidad de la
-              solución y la optimización del rendimiento para garantizar una experiencia de usuario fluida
-              y profesional.
-            </p>
           </div>
         </motion.div>
       </div>

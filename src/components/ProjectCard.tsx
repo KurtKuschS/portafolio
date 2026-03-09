@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { Project } from '@data/projects';
 import { ANIMATION_TIMINGS } from '@constants/animations';
 
@@ -10,6 +11,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = memo(({ project, index, onClick }: ProjectCardProps) => {
+  const { t } = useTranslation();
   return (
     <motion.div
       layout
@@ -78,7 +80,7 @@ const ProjectCard = memo(({ project, index, onClick }: ProjectCardProps) => {
         whileTap={{ scale: 0.95 }}
         className="w-full py-2 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold glow-button"
       >
-        Ver Detalles
+        {t('projects.viewDetails')}
       </motion.button>
     </motion.div>
   );

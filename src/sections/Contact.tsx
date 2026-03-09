@@ -3,9 +3,11 @@ import emailjs from '@emailjs/browser';
 import type { EmailJSResponseStatus } from '@emailjs/browser';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { env, isEmailJSConfigured } from '@/config/env';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,20 +34,20 @@ const Contact = () => {
     if (now - lastSubmitTime < cooldownMs) {
       const secondsLeft = Math.ceil((cooldownMs - (now - lastSubmitTime)) / 1000);
       setIsError(true);
-      setStatusMessage(`Espera ${secondsLeft} segundos antes de enviar otro mensaje.`);
+      setStatusMessage(t('contact.form.errors.spam', { seconds: secondsLeft }));
       return;
     }
 
     // Validación: mensaje mínimo 10 caracteres
     if (formData.message.trim().length < 10) {
       setIsError(true);
-      setStatusMessage('El mensaje debe tener al menos 10 caracteres.');
+      setStatusMessage(t('contact.form.errors.minLength'));
       return;
     }
 
     if (!isEmailJSConfigured()) {
       setIsError(true);
-      setStatusMessage('El servicio de contacto no está disponible en este momento.');
+      setStatusMessage(t('contact.form.errors.serviceUnavailable'));
       return;
     }
 
@@ -65,7 +67,7 @@ const Contact = () => {
         { publicKey: env.emailjs.publicKey }
       );
 
-      setStatusMessage('Mensaje enviado correctamente. Te responderé pronto.');
+      setStatusMessage(t('contact.form.success'));
       setFormData({ name: '', email: '', message: '', honeypot: '' });
       setLastSubmitTime(now);
     } catch (error) {
@@ -76,11 +78,11 @@ const Contact = () => {
       setIsError(true);
       
       if (emailError.status === 412) {
-        setStatusMessage('Error de configuración del servicio. Contacta por otros medios.');
+        setStatusMessage(t('contact.form.errors.configError'));
       } else if (emailError.status && emailError.status >= 500) {
-        setStatusMessage('Error del servidor. Por favor, intenta más tarde.');
+        setStatusMessage(t('contact.form.errors.serverError'));
       } else {
-        setStatusMessage('No se pudo enviar el mensaje. Verifica tu conexión.');
+        setStatusMessage(t('contact.form.errors.networkError'));
       }
     } finally {
       setIsSubmitting(false);
@@ -97,7 +99,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Contacto <span className="gradient-text">Profesional</span>
+            {t('contact.title')} <span className="gradient-text">{t('contact.titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto" />
         </motion.div>
@@ -110,17 +112,17 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold mb-6">Conectemos</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('contact.subtitle')}</h3>
 
             <div className="glass-effect rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <p className="text-gray-400 mb-2">Email</p>
+              <p className="text-gray-400 mb-2">{t('contact.email')}</p>
               <a href="mailto:kurt.kusch@gmail.com" className="text-lg text-white hover:text-primary transition-colors">
                 kurt.kusch@gmail.com
               </a>
             </div>
 
             <div className="glass-effect rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <p className="text-gray-400 mb-2">GitHub</p>
+              <p className="text-gray-400 mb-2">{t('contact.github')}</p>
               <a
                 href="https://github.com/KurtKuschS"
                 target="_blank"
@@ -132,7 +134,7 @@ const Contact = () => {
             </div>
 
             <div className="glass-effect rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <p className="text-gray-400 mb-2">LinkedIn</p>
+              <p className="text-gray-400 mb-2">{t('contact.linkedin')}</p>
               <a
                 href="https://www.linkedin.com/in/kurt-dereck-kusch-sep%C3%BAlveda-222bb0129/"
                 target="_blank"
@@ -144,14 +146,14 @@ const Contact = () => {
             </div>
 
             <div className="glass-effect rounded-xl p-6 hover:border-emerald-400/50 transition-colors">
-              <p className="text-gray-400 mb-2">WhatsApp</p>
+              <p className="text-gray-400 mb-2">{t('contact.whatsapp')}</p>
               <a
                 href="https://wa.me/56942886459"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-lg border border-emerald-400/50 px-4 py-2 text-lg text-emerald-300 transition-colors hover:bg-emerald-400/10"
               >
-                Contactarme al +56 9 4288 6459
+                {t('contact.whatsappButton')}
               </a>
             </div>
           </motion.div>
@@ -179,7 +181,7 @@ const Contact = () => {
               />
 
               <div>
-                <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
+                <label htmlFor="contact-name" className="block text-sm font-medium text-gray-300 mb-2">{t('contact.form.name')}</label>
                 <input
                   type="text"
                   id="contact-name"
@@ -191,12 +193,12 @@ const Contact = () => {
                   maxLength={100}
                   autoComplete="name"
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors"
-                  placeholder="Tu nombre"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="contact-email" className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                <label htmlFor="contact-email" className="block text-sm font-medium text-gray-300 mb-2">{t('contact.form.email')}</label>
                 <input
                   type="email"
                   id="contact-email"
@@ -206,13 +208,13 @@ const Contact = () => {
                   required
                   autoComplete="email"
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors"
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Mensaje <span className="text-gray-500 text-xs">(mínimo 10 caracteres)</span>
+                  {t('contact.form.message')} <span className="text-gray-500 text-xs">(mínimo 10 caracteres)</span>
                 </label>
                 <textarea
                   id="contact-message"
@@ -224,7 +226,7 @@ const Contact = () => {
                   maxLength={1000}
                   rows={5}
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Tu mensaje..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
                 <p className="text-xs text-gray-500 mt-1">{formData.message.length}/1000</p>
               </div>
@@ -236,7 +238,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="w-full py-4 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold glow-button"
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+                {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
               </motion.button>
 
               {statusMessage && (

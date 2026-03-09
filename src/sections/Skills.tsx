@@ -1,10 +1,22 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SkillRadarChart from '@components/SkillRadarChart';
 import { SKILL_CATEGORIES, getRadarData } from '@constants/skills';
 import { ANIMATION_TIMINGS } from '@constants/animations';
 
 const Skills = () => {
+  const { t } = useTranslation();
   const radarData = getRadarData();
+  
+  // Map category titles to translation keys
+  const categoryTranslationMap: Record<string, string> = {
+    'Backend': 'skills.categories.backend',
+    'Frontend': 'skills.categories.frontend',
+    'Bases de Datos': 'skills.categories.databases',
+    'DevOps / Cloud': 'skills.categories.devops',
+    'Herramientas': 'skills.categories.tools',
+  };
+
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -15,7 +27,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Tech <span className="gradient-text">Stack</span>
+            {t('skills.title')} <span className="gradient-text">{t('skills.titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto" />
         </motion.div>
@@ -35,7 +47,9 @@ const Skills = () => {
               className="glass-effect rounded-2xl p-6"
             >
               <div className={`mb-6 inline-block rounded-lg bg-gradient-to-r px-4 py-2 ${category.colorClass}`}>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {categoryTranslationMap[category.title] ? t(categoryTranslationMap[category.title]) : category.title}
+                </h3>
               </div>
 
               <div className="space-y-3">

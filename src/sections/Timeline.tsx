@@ -1,19 +1,13 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const timelineData = [
-  {
-    year: '2019',
-    title: 'Ingreso a Ingeniería en Computación e Informática',
-    institution: 'Universidad de Magallanes',
-  },
-  {
-    year: '2025',
-    title: 'Finalización de carrera',
-    institution: 'Universidad de Magallanes',
-  },
+  { year: '2019' },
+  { year: '2025' },
 ];
 
 const Timeline = () => {
+  const { t } = useTranslation();
   return (
     <section id="timeline" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
@@ -24,7 +18,7 @@ const Timeline = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Mi <span className="gradient-text">Timeline</span>
+            {t('timeline.title')} <span className="gradient-text">{t('timeline.titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto" />
         </motion.div>
@@ -57,8 +51,8 @@ const Timeline = () => {
 
               <div className="ml-8 glass-effect rounded-xl p-6 flex-1">
                 <span className="text-primary font-bold text-lg">{item.year}</span>
-                <h3 className="text-xl font-semibold mt-2 mb-2">{item.title}</h3>
-                <p className="text-gray-400">{item.institution}</p>
+                <h3 className="text-xl font-semibold mt-2 mb-2">{t(`timeline.events.${item.year}.title`)}</h3>
+                <p className="text-gray-400">{t(`timeline.events.${item.year}.institution`)}</p>
               </div>
             </motion.div>
           ))}

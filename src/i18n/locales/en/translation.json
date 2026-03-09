@@ -1,0 +1,310 @@
+{
+  "hero": {
+    "role": "Junior Backend / Full Stack Developer",
+    "name": "Kurt Dereck Kusch Sepúlveda",
+    "degree": "Computer Engineering & Informatics",
+    "description": "I develop web solutions focused on backend, modular architecture, and cloud deployment, integrating modern interfaces when the product requires it.",
+    "viewProjects": "View Projects",
+    "downloadCV": "Download CV"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "timeline": "Timeline",
+    "philosophy": "Philosophy",
+    "contact": "Contact",
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Me",
+    "paragraph1": "Computer Engineering & Informatics professional with experience in developing web systems focused on administrative management, sales platforms, and booking systems.",
+    "paragraph2": "With a <strong>Junior Backend / Full Stack</strong> focus, I specialize in backend development with Python and Django, Django REST Framework, and PHP with Laravel, working with relational databases such as PostgreSQL and MySQL.",
+    "paragraph3": "I also have experience in modern frontend using React and TypeScript, and in deploying applications on cloud platforms like Render and Vercel. My focus is to build maintainable, scalable, and well-structured software, following engineering best practices."
+  },
+  "skills": {
+    "title": "Tech",
+    "titleHighlight": "Stack",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Databases",
+      "devops": "DevOps & Cloud",
+      "tools": "Tools",
+      "other": "Other"
+    }
+  },
+  "philosophy": {
+    "title": "Engineering",
+    "titleHighlight": "Philosophy",
+    "principles": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Readable and maintainable code with clear names, single responsibility, and consistent conventions."
+      },
+      "modularArchitecture": {
+        "title": "Modular Architecture",
+        "description": "Decoupled and reusable components to evolve the system without unnecessary technical debt."
+      },
+      "realOptimization": {
+        "title": "Real Optimization",
+        "description": "I measure and optimize render, bundle size, and perceived load to ensure smooth UX on any device."
+      },
+      "continuousLearning": {
+        "title": "Continuous Learning",
+        "description": "I adapt quickly to new tools and approaches to solve complex problems with technical criteria."
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured",
+    "titleHighlight": "Projects",
+    "description": "A selection of projects that demonstrate my technical skills in software development, system architecture, and complex problem solving.",
+    "viewDetails": "View Details",
+    "filters": {
+      "all": "All",
+      "c": "C",
+      "react": "React",
+      "systems": "Systems"
+    }
+  },
+  "projectDetails": {
+    "backToProjects": "Back to Projects",
+    "technologies": "Technologies",
+    "architecture": "Architecture",
+    "dataFlow": "Data Flow",
+    "keyHighlights": "Key Highlights",
+    "screenshots": "Screenshots",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "timeline": {
+    "title": "My",
+    "titleHighlight": "Timeline",
+    "events": {
+      "2019": {
+        "title": "Started Computer Engineering & Informatics",
+        "institution": "Universidad de Magallanes"
+      },
+      "2025": {
+        "title": "Graduation",
+        "institution": "Universidad de Magallanes"
+      }
+    }
+  },
+  "contact": {
+    "title": "Professional",
+    "titleHighlight": "Contact",
+    "subtitle": "Let's Connect",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "whatsappButton": "Contact me at +56 9 4288 6459",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully. I'll reply soon.",
+      "errors": {
+        "spam": "Wait {{seconds}} seconds before sending another message.",
+        "minLength": "Message must be at least 10 characters long.",
+        "serviceUnavailable": "Contact service is not available at this moment.",
+        "configError": "Service configuration error. Please contact through other means.",
+        "serverError": "Server error. Please try again later.",
+        "networkError": "Could not send message. Check your connection."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Kurt Dereck Kusch Sepúlveda. All rights reserved."
+  },
+  "projectsData": {
+    "git-simulator": {
+      "title": "Git Simulator in C",
+      "shortDescription": "Implementation of init, add, commit, log, and checkout commands using data structures and file handling.",
+      "fullDescription": "Complete system simulating Git's internal workings, implementing fundamental version control system commands.\n\nThis project demonstrates deep understanding of:\n- Complex data structures\n- File handling in C\n- Hash algorithms and state management\n- Version control system design\n\nThe simulator allows creating repositories, tracking changes, making commits, and navigating between different code versions, replicating Git's core behavior.",
+      "technologies": ["C", "Data Structures", "File Handling", "Algorithms"],
+      "highlights": [
+        "Complete implementation of init, add, commit, log, and checkout",
+        "Hash system for commit identification",
+        "Efficient memory management",
+        "Binary and text file handling"
+      ],
+      "diagram": {
+        "architecture": ["CLI Interface", "Command Parser", "File Index", "Commit Objects"],
+        "dataFlow": [
+          "User executes a command in the CLI.",
+          "Parser interprets arguments and validates rules.",
+          "Engine updates index and commit objects on disk.",
+          "Repository state is reflected in log and checkout."
+        ]
+      }
+    },
+    "order-taking-app": {
+      "title": "Order-Taking Application",
+      "shortDescription": "System for field sales representatives to register orders for a food distribution company.",
+      "fullDescription": "Mobile/web application designed to optimize the field order-taking process for food distributors.\n\nMain features:\n- Intuitive interface for field sales representatives\n- Product catalog with quick search\n- Customer and route management\n- Offline/online data synchronization\n- Report and statistics generation\n\nThe application significantly improves sales efficiency, reduces order errors, and facilitates centralized sales management.",
+      "technologies": ["JavaScript", "React", "Node.js", "REST API", "Git"],
+      "highlights": [
+        "Responsive interface optimized for tablets",
+        "Offline mode with automatic synchronization",
+        "Real-time inventory validation",
+        "Notification system for updates"
+      ],
+      "diagram": {
+        "architecture": ["Mobile UI", "REST API", "Sync Service", "SQL Database"],
+        "dataFlow": [
+          "Sales representative registers orders from mobile interface.",
+          "App validates stock and customer locally for immediate response.",
+          "Synchronization service sends changes to REST API.",
+          "SQL database persists orders and publishes status for reporting."
+        ]
+      }
+    },
+    "portfolio-website": {
+      "title": "Personal Portfolio",
+      "shortDescription": "Professional SPA to present profile, tech stack, and projects with modular architecture, technical SEO, and performance optimization.",
+      "fullDescription": "SPA web system designed to communicate software engineering experience through a modern and maintainable interface.\n\nProblem it solves:\n- Centralize experience, stack, and technical evidence in one platform.\n- Present projects with architectural context and operational flow.\n- Improve professional visibility.\n\nTechnical approach:\n- Modular layered architecture (pages, sections, components, data, constants, config).\n- Optimized rendering with lazy loading, code splitting, and component memoization.\n- Interactive experience with controlled animations and reduced motion support.\n- Contact integration with EmailJS and anti-spam validations on frontend.",
+      "technologies": ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "React Router DOM", "Recharts", "tsParticles", "EmailJS"],
+      "highlights": [
+        "Scalable modular architecture with clear separation of concerns",
+        "Manual bundle splitting in Vite to improve caching and initial load time",
+        "ErrorBoundary, lazy loading, and fallback UI for production resilience",
+        "Contact form with typed validations, honeypot, and rate limiting",
+        "Applied accessibility (skip link, associated labels, key ARIA attributes)",
+        "Complete technical SEO: Open Graph, Twitter Cards, canonical, and JSON-LD",
+        "Strict TypeScript usage to reduce errors and improve maintainability"
+      ],
+      "diagram": {
+        "architecture": [
+          "Presentation Layer (Pages + Sections)",
+          "Reusable Components (UI + Motion)",
+          "Typed Data Layer (projects.ts)",
+          "Configuration Layer (env + constants)",
+          "External Services (EmailJS + Vercel Analytics)"
+        ],
+        "dataFlow": [
+          "User enters the SPA and router loads Home with composable sections.",
+          "In Projects, system applies typed filters and renders optimized cards.",
+          "When opening a project, it's queried by id in data layer to build technical view.",
+          "In Contact, fields and anti-spam are validated; then payload is sent to EmailJS.",
+          "Usage metrics are reported with Vercel Analytics and Speed Insights."
+        ]
+      }
+    },
+    "dap-transport-routing-system": {
+      "title": "DAP Transport and Shift Routing Management System",
+      "shortDescription": "Internal Laravel web application for managing transport shifts, optimizing routes, and generating operational reports with map visualization.",
+      "fullDescription": "Internal web application developed with Laravel to manage employees, pickup addresses, common locations, and airport transport shifts.\n\nProblem it solves:\n- Complex coordination of staff transport with multiple pickup points and arrival time constraints.\n- Reduction of manual planning errors and increased operational traceability.\n- Standardization of operational output for field execution.\n\nTechnical approach:\n- Structured assignment of employees and addresses per shift.\n- Pickup order optimization with real road network distances.\n- Automatic calculation of stop times to meet target arrival time.\n- Planning export in Excel, PDF, and PNG, with geographic map visualization support.",
+      "technologies": ["PHP 8.2", "Laravel 12", "Eloquent ORM", "Blade", "MySQL/PostgreSQL", "JavaScript", "Alpine.js", "Tailwind CSS", "Vite", "Leaflet", "OpenStreetMap", "OSRM", "Laravel Excel", "Dompdf", "Browsershot", "Docker", "Nginx", "PHP-FPM"],
+      "highlights": [
+        "Custom optimization engine (TieredNearestNeighborOptimizer) with 2-opt and or-opt refinement",
+        "Distance matrix with OSRM and automatic Haversine fallback on API failures",
+        "Geometry persistence per segment in ruta_puntos.geometry for immediate map rendering",
+        "Automatic schedule recalculation when optimizing or manually reordering points",
+        "Flexible shift model with fixed/dynamic intervals based on distance",
+        "Common location handling without losing route temporal coherence",
+        "Complete operational pipeline: registration/import, optimization, visualization, and export",
+        "Decoupled MVC architecture prepared for functional evolution"
+      ],
+      "diagram": {
+        "architecture": [
+          "Presentation: Blade + UI Components + Leaflet Map",
+          "Application: Controllers (Employee, Address, CommonPlace, Shift)",
+          "Domain: RouteOptimizerService + ScheduleCalculatorService",
+          "Routing: OSRM Table/Route + Optimization Heuristics",
+          "Data: Relational model (employees, shifts, routes, route_points)",
+          "Export: Excel/PDF/PNG for operations"
+        ],
+        "dataFlow": [
+          "User registers or imports georeferenced employees and addresses.",
+          "Defines shift with date, target arrival time, and interval parameters.",
+          "Selects participating staff and executes route optimization.",
+          "System queries OSRM, calculates pickup order, and persists route + route_points.",
+          "Estimated times per point are calculated based on target arrival.",
+          "User visualizes map and spreadsheet, manually adjusts order if needed.",
+          "When saving adjustments, times are recalculated and exported in Excel, PDF, or PNG."
+        ]
+      }
+    },
+    "lash-kingdom-booking-platform": {
+      "title": "Lash Kingdom - Beauty Salon Booking Platform",
+      "shortDescription": "Django web platform for online bookings, operational management, and availability control with double-booking protection.",
+      "fullDescription": "Lash Kingdom is a Django-based appointment management web platform for a salon specialized in eyelash extensions and beauty treatments.\n\nProblem it solves:\n- Eliminates manual management via messaging or calls that generates double bookings and lost traceability.\n- Allows clients to book autonomously in real-time.\n- Delivers complete operational visibility of each appointment status.\n- Guarantees at database level that a time slot cannot be booked twice.\n\nTechnical approach:\n- Concurrency control with atomic transactions and select_for_update().\n- Data integrity with UniqueConstraint on bookings and availability slots.\n- Cross-cutting security with rate limiting middleware and security headers.\n- Production operation with multi-environment configuration (SQLite in development and PostgreSQL in production).",
+      "technologies": ["Python 3", "Django 5.2", "Django ORM", "PostgreSQL", "SQLite", "Tailwind CSS", "Gunicorn", "WhiteNoise", "Pillow", "python-dotenv", "Docker", "Render"],
+      "highlights": [
+        "Concurrency control with SELECT FOR UPDATE to eliminate race conditions",
+        "UniqueConstraint on Booking and AvailabilitySlot to prevent double bookings in DB",
+        "IP-based rate limiting on login, registration, and booking creation with HTTP 429 response",
+        "Security middleware with HSTS, CSP, X-Frame-Options, and X-Content-Type-Options",
+        "Structured logging of critical events (registration, booking, rate limit exceeded, conflicts)",
+        "Production-ready configuration with DEBUG=False, environment-based SECRET_KEY, and dynamic ALLOWED_HOSTS",
+        "Modular architecture by domain apps without circular dependencies",
+        "Containerized deployment with Docker + Render for stable production environment"
+      ],
+      "diagram": {
+        "architecture": [
+          "core: global configuration, security middleware, and root routing",
+          "accounts: authentication, registration, and ClientProfile",
+          "services: service catalog and AvailabilitySlot",
+          "bookings: Booking creation and administrative dashboard",
+          "pages: editable public content (about us and gallery)",
+          "Django ORM: exclusive data access with relational model"
+        ],
+        "dataFlow": [
+          "Client registers and ClientProfile is created associated with user.",
+          "Selects service, date, and queries active unreserved slots.",
+          "On confirmation, system opens transaction.atomic() and locks slot with select_for_update().",
+          "If slot remains free, Booking is persisted in pending state; otherwise, conflict is reported.",
+          "Administration manages states (pending, confirmed, completed, cancelled).",
+          "Middlewares apply rate limit, security headers, and critical event auditing."
+        ]
+      }
+    },
+    "sales-inventory-admin-system": {
+      "title": "Sales and Inventory Management System",
+      "shortDescription": "Enterprise web system for managing inventory, sales, supplier entries, customers, and reports with auditing and role-based control.",
+      "fullDescription": "Business administration web system developed as university thesis project.\n\nProblem it solves:\n- Replaces manual spreadsheet management with centralized multi-user platform.\n- Prevents stock inconsistencies and lack of traceability in commercial operations.\n- Provides role-based access control, data integrity, and cross-cutting auditing.\n\nTechnical approach:\n- Comprehensive operational cycle management: products, orders, entries, customers, and reports.\n- Critical operations in atomic transactions to preserve inventory consistency.\n- Reports endpoint with dynamic filters and complex joins for commercial analysis.\n- HTTP security hardening and automatic activity logging per user and model.",
+      "technologies": ["PHP 8.x", "Laravel 11", "Eloquent ORM", "MySQL", "Blade", "Tailwind CSS", "Vite", "JavaScript", "Spatie Laravel Permission", "bepsvpt/secure-headers", "SweetAlert2", "Font Awesome", "Carbon"],
+      "highlights": [
+        "Reusable RegistraActividad trait for automatic auditing (created, updated, deleted)",
+        "RBAC with three levels (Admin, Manager, Sales) and granular action permissions",
+        "DB::transaction() in order creation for stock and total atomicity",
+        "M:N Order-Product relationship with pedido_producto pivot (quantity, gift)",
+        "JSON endpoint /reportes/ventas-productos-data with joins, conditional filters, and grouping",
+        "Listings with pagination and combined filters without full page reload",
+        "HTTP hardening with CSP, HSTS, X-Frame-Options, and X-Content-Type-Options",
+        "Scalable MVC architecture with clear separation of concerns"
+      ],
+      "diagram": {
+        "architecture": [
+          "Eloquent Models: User, Product, Category, Brand, Customer, Order, Entry, ActivityHistory",
+          "Controllers per module: products, orders, entries, reports, users, and roles",
+          "Blade views per domain with shared layout for consistent UI",
+          "RBAC authorization with auth middleware + Spatie Laravel Permission",
+          "Cross-cutting audit layer with RegistraActividad trait on Eloquent events",
+          "HTTP security layer with secure-headers aligned to OWASP"
+        ],
+        "dataFlow": [
+          "User logs in and system enables actions based on role (Admin, Manager, Sales).",
+          "From dashboard, sales indicators, customers, orders, and notifications are consumed.",
+          "When creating order, products and quantities are added; a transaction updates stock and totals with VAT.",
+          "When registering entry, supplier-product is associated and inventory is updated with traceability.",
+          "Reports module executes queries with joins and filters by date, brand, and category.",
+          "Views consume JSON endpoint for dynamic product sales analytics.",
+          "Each CRUD operation triggers automatic auditing with user, IP, and previous/new changes."
+        ]
+      }
+    }
+  }
+}
