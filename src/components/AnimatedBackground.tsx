@@ -43,7 +43,9 @@ const AnimatedBackground = () => {
             enable: !reduceMotion,
             mode: 'connect',
           },
-          resize: true,
+          resize: {
+            enable: true,
+          },
         },
         modes: {
           connect: {
