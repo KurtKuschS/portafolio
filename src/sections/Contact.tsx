@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import type { EmailJSResponseStatus } from '@emailjs/browser';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { env, isEmailJSConfigured } from '@/config/env';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,13 +43,9 @@ const Contact = () => {
       return;
     }
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
+    if (!isEmailJSConfigured()) {
       setIsError(true);
-      setStatusMessage('Falta configurar EmailJS en variables de entorno.');
+      setStatusMessage('El servicio de contacto no está disponible en este momento.');
       return;
     }
 
@@ -57,22 +55,33 @@ const Contact = () => {
       setStatusMessage(null);
 
       await emailjs.send(
-        serviceId,
-        templateId,
+        env.emailjs.serviceId,
+        env.emailjs.templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        { publicKey }
+        { publicKey: env.emailjs.publicKey }
       );
 
       setStatusMessage('Mensaje enviado correctamente. Te responderé pronto.');
       setFormData({ name: '', email: '', message: '', honeypot: '' });
       setLastSubmitTime(now);
-    } catch {
+    } catch (error) {
+      const emailError = error as EmailJSResponseStatus;
+      
+      console.error('EmailJS error:', emailError.status, emailError.text);
+      
       setIsError(true);
-      setStatusMessage('No se pudo enviar el mensaje. Intenta nuevamente en unos minutos.');
+      
+      if (emailError.status === 412) {
+        setStatusMessage('Error de configuración del servicio. Contacta por otros medios.');
+      } else if (emailError.status && emailError.status >= 500) {
+        setStatusMessage('Error del servidor. Por favor, intenta más tarde.');
+      } else {
+        setStatusMessage('No se pudo enviar el mensaje. Verifica tu conexión.');
+      }
     } finally {
       setIsSubmitting(false);
     }

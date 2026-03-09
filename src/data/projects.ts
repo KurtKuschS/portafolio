@@ -1,4 +1,5 @@
-export type ProjectFilter = 'C' | 'React' | 'Systems';
+export const PROJECT_FILTERS = ['All', 'C', 'React', 'Systems'] as const;
+export type ProjectFilter = Exclude<(typeof PROJECT_FILTERS)[number], 'All'>;
 
 export interface ProjectDiagram {
   architecture: string[];

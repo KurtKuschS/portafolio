@@ -2,10 +2,9 @@ import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectCard from '@components/ProjectCard';
-import { projects, type ProjectFilter } from '@data/projects';
+import { projects, PROJECT_FILTERS, type ProjectFilter } from '@data/projects';
 
-const projectFilters = ['All', 'C', 'React', 'Systems'] as const;
-type DashboardFilter = (typeof projectFilters)[number];
+type DashboardFilter = (typeof PROJECT_FILTERS)[number];
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -44,7 +43,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mb-10 flex flex-wrap items-center justify-center gap-3"
         >
-          {projectFilters.map((filter) => {
+          {PROJECT_FILTERS.map((filter) => {
             const isActive = activeFilter === filter;
 
             return (

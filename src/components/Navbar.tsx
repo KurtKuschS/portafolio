@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { MENU_ITEMS } from '@constants/navigation';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,15 +14,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const menuItems = [
-    { name: 'Inicio', href: '#hero' },
-    { name: 'Sobre Mí', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Timeline', href: '#timeline' },
-    { name: 'Contacto', href: '#contact' },
-  ];
 
   return (
     <motion.nav
@@ -42,7 +34,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {menuItems.map((item) => (
+            {MENU_ITEMS.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
@@ -80,7 +72,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-3">
-            {menuItems.map((item) => (
+            {MENU_ITEMS.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
