@@ -8,13 +8,38 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
+    honeypot: '', // Campo trampa para bots
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isError, setIsError] = useState(false);
+  const [lastSubmitTime, setLastSubmitTime] = useState<number>(0);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    // Anti-spam: honeypot field (si está lleno, es un bot)
+    if (formData.honeypot) {
+      console.warn('Spam detected: honeypot field filled');
+      return;
+    }
+
+    // Anti-spam: rate limiting (1 mensaje cada 60 segundos)
+    const now = Date.now();
+    const cooldownMs = 60000; // 60 segundos
+    if (now - lastSubmitTime < cooldownMs) {
+      const secondsLeft = Math.ceil((cooldownMs - (now - lastSubmitTime)) / 1000);
+      setIsError(true);
+      setStatusMessage(`Espera ${secondsLeft} segundos antes de enviar otro mensaje.`);
+      return;
+    }
+
+    // Validación: mensaje mínimo 10 caracteres
+    if (formData.message.trim().length < 10) {
+      setIsError(true);
+      setStatusMessage('El mensaje debe tener al menos 10 caracteres.');
+      return;
+    }
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -43,7 +68,8 @@ const Contact = () => {
       );
 
       setStatusMessage('Mensaje enviado correctamente. Te responderé pronto.');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', honeypot: '' });
+      setLastSubmitTime(now);
     } catch {
       setIsError(true);
       setStatusMessage('No se pudo enviar el mensaje. Intenta nuevamente en unos minutos.');
@@ -130,6 +156,17 @@ const Contact = () => {
             className="glass-effect rounded-2xl p-8"
           >
             <div className="space-y-6">
+              {/* Honeypot field - campo oculto para detectar bots */}
+              <input
+                type="text"
+                name="website"
+                value={formData.honeypot}
+                onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
                 <input
@@ -137,6 +174,8 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  minLength={2}
+                  maxLength={100}
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors"
                   placeholder="Tu nombre"
                 />
@@ -155,15 +194,20 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Mensaje</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Mensaje <span className="text-gray-500 text-xs">(mínimo 10 caracteres)</span>
+                </label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
+                  minLength={10}
+                  maxLength={1000}
                   rows={5}
                   className="w-full px-4 py-3 bg-background/50 border border-white/20 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none"
                   placeholder="Tu mensaje..."
                 />
+                <p className="text-xs text-gray-500 mt-1">{formData.message.length}/1000</p>
               </div>
 
               <motion.button

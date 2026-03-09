@@ -48,7 +48,7 @@ const Hero = () => {
             transition={{ delay: 0.2 }}
             className="text-secondary font-medium mb-4 tracking-wider uppercase"
           >
-            Software Developer
+            Junior Backend / Full Stack Developer
           </motion.p>
 
           <motion.h1
@@ -76,8 +76,8 @@ const Hero = () => {
             transition={{ delay: 0.7 }}
             className="text-gray-400 max-w-2xl mx-auto mb-12 text-lg"
           >
-            Construyendo soluciones de software robustas con enfoque en arquitectura limpia,
-            rendimiento y experiencias de usuario excepcionales.
+            Desarrollo soluciones web enfocadas en backend, arquitectura modular y despliegue cloud,
+            integrando interfaces modernas cuando el producto lo requiere.
           </motion.p>
 
           <motion.div

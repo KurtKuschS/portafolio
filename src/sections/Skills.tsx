@@ -3,34 +3,59 @@ import SkillRadarChart from '../components/SkillRadarChart';
 
 const skillCategories = [
   {
-    title: 'Lenguajes',
+    title: 'Backend',
     items: [
-      { name: 'C', level: 88 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'Python', level: 80 },
-      { name: 'SQL', level: 76 },
+      { name: 'Python', level: 78 },
+      { name: 'Django', level: 76 },
+      { name: 'Django REST Framework', level: 72 },
+      { name: 'PHP', level: 70 },
+      { name: 'Laravel', level: 68 },
     ],
     colorClass: 'from-primary to-accent',
-    aggregate: 82,
+    aggregate: 73,
   },
   {
-    title: 'Tecnologías',
+    title: 'Frontend',
     items: [
-      { name: 'Git', level: 90 },
-      { name: 'Linux', level: 82 },
-      { name: 'REST APIs', level: 84 },
+      { name: 'React', level: 78 },
+      { name: 'TypeScript', level: 74 },
+      { name: 'JavaScript', level: 80 },
+      { name: 'HTML', level: 84 },
+      { name: 'CSS', level: 76 },
     ],
     colorClass: 'from-secondary to-primary',
-    aggregate: 85,
+    aggregate: 78,
+  },
+  {
+    title: 'Bases de Datos',
+    items: [
+      { name: 'PostgreSQL', level: 76 },
+      { name: 'MySQL', level: 74 },
+      { name: 'Supabase', level: 66 },
+    ],
+    colorClass: 'from-accent to-secondary',
+    aggregate: 72,
+  },
+  {
+    title: 'DevOps / Cloud',
+    items: [
+      { name: 'Docker', level: 64 },
+      { name: 'Render', level: 70 },
+      { name: 'Vercel', level: 82 },
+    ],
+    colorClass: 'from-primary to-secondary',
+    aggregate: 72,
   },
   {
     title: 'Herramientas',
     items: [
-      { name: 'GitHub', level: 86 },
-      { name: 'VS Code', level: 92 },
+      { name: 'Git', level: 82 },
+      { name: 'GitHub', level: 84 },
+      { name: 'Linux', level: 72 },
+      { name: 'Postman', level: 78 },
     ],
     colorClass: 'from-accent to-secondary',
-    aggregate: 89,
+    aggregate: 79,
   },
 ];
 
@@ -59,7 +84,7 @@ const Skills = () => {
           <SkillRadarChart data={radarData} />
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}

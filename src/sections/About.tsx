@@ -24,20 +24,20 @@ const About = () => {
           className="glass-effect rounded-2xl p-8 md:p-12"
         >
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
-            Soy <span className="text-primary font-semibold">Ingeniero en Computación e Informática</span> con
-            una sólida formación en desarrollo de software y un enfoque orientado a crear soluciones
-            tecnológicas eficientes, escalables y mantenibles.
+            Ingeniero en Computación e Informática con experiencia en el desarrollo de sistemas web
+            enfocados en gestión administrativa, plataformas de ventas y reservas.
           </p>
 
           <p className="text-lg text-gray-400 leading-relaxed mb-6">
-            Me interesa profundamente el diseño e implementación de sistemas, el trabajo con herramientas
-            técnicas modernas y la construcción de aplicaciones que resuelvan problemas reales con impacto.
+            Con enfoque <span className="text-primary font-semibold">Junior Backend / Full Stack</span>, me especializo
+            en desarrollo backend con Python y Django, Django REST Framework, y PHP con Laravel,
+            trabajando con bases de datos relacionales como PostgreSQL y MySQL.
           </p>
 
           <p className="text-lg text-gray-400 leading-relaxed">
-            A futuro, busco especializarme en áreas avanzadas como <span className="text-secondary font-semibold">bioinformática</span>
-            {' '}y <span className="text-secondary font-semibold">sistemas complejos</span>, combinando ingeniería,
-            ciencia de datos y arquitectura de software para enfrentar desafíos de alta complejidad.
+            También cuento con experiencia en frontend moderno usando React y TypeScript, y en despliegue
+            de aplicaciones en plataformas cloud como Render y Vercel. Mi foco es construir software
+            mantenible, escalable y bien estructurado, siguiendo buenas prácticas de ingeniería.
           </p>
         </motion.div>
       </div>
