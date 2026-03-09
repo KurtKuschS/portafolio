@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
-import type { Project } from '../data/projects';
-import { ANIMATION_TIMINGS } from '../constants/animations';
+import type { Project } from '@data/projects';
+import { ANIMATION_TIMINGS } from '@constants/animations';
 
 interface ProjectCardProps {
   project: Project;

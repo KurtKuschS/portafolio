@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import ProjectCard from '../components/ProjectCard';
-import { projects, type ProjectFilter } from '../data/projects';
+import ProjectCard from '@components/ProjectCard';
+import { projects, type ProjectFilter } from '@data/projects';
 
 const projectFilters = ['All', 'C', 'React', 'Systems'] as const;
 type DashboardFilter = (typeof projectFilters)[number];

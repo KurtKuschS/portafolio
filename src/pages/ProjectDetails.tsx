@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getProjectById } from '../data/projects';
-import ArchitectureDiagram from '../components/ArchitectureDiagram';
+import { getProjectById } from '@data/projects';
+import ArchitectureDiagram from '@components/ArchitectureDiagram';
 
 const ProjectDetails = () => {
   const { id } = useParams();

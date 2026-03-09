@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import SkillRadarChart from '../components/SkillRadarChart';
-import { SKILL_CATEGORIES, getRadarData } from '../constants/skills';
-import { ANIMATION_TIMINGS } from '../constants/animations';
+import SkillRadarChart from '@components/SkillRadarChart';
+import { SKILL_CATEGORIES, getRadarData } from '@constants/skills';
+import { ANIMATION_TIMINGS } from '@constants/animations';
 
 const Skills = () => {
   const radarData = getRadarData();

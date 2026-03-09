@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
-import { ANIMATION_TIMINGS } from '../constants/animations';
+import { ANIMATION_TIMINGS } from '@constants/animations';
 
 interface TechBadgeProps {
   name: string;
