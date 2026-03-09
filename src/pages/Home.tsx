@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background text-white">
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <Skills />

@@ -7,16 +7,43 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    let rafId: number | null = null;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      const shouldBeScrolled = currentScrollY > 50;
+      
+      // Solo actualizar si el estado realmente necesita cambiar
+      if ((shouldBeScrolled && !isScrolled) || (!shouldBeScrolled && isScrolled)) {
+        if (rafId !== null) return;
+        
+        rafId = window.requestAnimationFrame(() => {
+          setIsScrolled(shouldBeScrolled);
+          rafId = null;
+        });
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
+  }, [isScrolled]);
 
   return (
-    <motion.nav
+    <>
+      {/* Skip to main content link for keyboard navigation */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+      >
+        Saltar al contenido principal
+      </a>
+
+      <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -50,12 +77,18 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen((prev) => !prev)} className="text-white p-2">
+            <button
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={isOpen}
+              className="text-white p-2"
+            >
               <svg
                 className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -86,6 +119,7 @@ const Navbar = () => {
         </div>
       )}
     </motion.nav>
+    </>
   );
 };
 

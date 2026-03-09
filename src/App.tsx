@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import ErrorBoundary from '@components/ErrorBoundary';
 
 const Home = lazy(() => import('./pages/Home'));
 const ProjectDetails = lazy(() => import('./pages/ProjectDetails'));
@@ -75,10 +76,12 @@ function App() {
           </div>
         }
       >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project/:id" element={<ProjectDetails />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project/:id" element={<ProjectDetails />} />
+          </Routes>
+        </ErrorBoundary>
       </Suspense>
     </>
   );
