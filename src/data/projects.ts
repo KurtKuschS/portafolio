@@ -98,16 +98,30 @@ La aplicación mejora significativamente la eficiencia de los vendedores, reduce
   {
     id: 'portfolio-website',
     title: 'Portafolio Personal',
-    shortDescription: 'Sitio web profesional moderno con animaciones avanzadas y diseño responsive.',
-    fullDescription: `Portafolio web profesional desarrollado con las últimas tecnologías frontend, demostrando habilidades en diseño UI/UX y desarrollo moderno.
-    
-Este proyecto incorpora:
-- Arquitectura de componentes escalable
-- Animaciones fluidas con Framer Motion
-- Diseño responsive mobile-first
-- Optimización de rendimiento
-- TypeScript para type safety`,
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+    shortDescription: 'SPA profesional para presentar perfil, stack y proyectos con arquitectura modular, SEO técnico y optimización de rendimiento.',
+    fullDescription: `Sistema web tipo SPA, diseñado para comunicar experiencia en ingeniería de software mediante una interfaz moderna y mantenible.
+
+Problema que resuelve:
+- Centralizar experiencia, stack y evidencia técnica en una plataforma.
+- Presentar proyectos con contexto arquitectónico y flujo de funcionamiento.
+- Mejorar visibilidad profesional.
+
+Enfoque técnico:
+- Arquitectura modular por capas (pages, sections, components, data, constants, config).
+- Renderizado optimizado con lazy loading, code splitting y memoización de componentes.
+- Experiencia interactiva con animaciones controladas y soporte para reduced motion.
+- Integración de contacto con EmailJS y validaciones anti-spam en frontend.`,
+    technologies: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'Framer Motion',
+      'React Router DOM',
+      'Recharts',
+      'tsParticles',
+      'EmailJS',
+    ],
     filters: ['React'],
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
@@ -115,18 +129,29 @@ Este proyecto incorpora:
       'https://placehold.co/1200x720/0a0a0a/06b6d4?text=Portfolio+Project+Dashboard',
     ],
     diagram: {
-      architecture: ['React UI', 'Modular Components', 'Static Data Layer'],
+      architecture: [
+        'Capa de Presentación (Pages + Sections)',
+        'Componentes Reutilizables (UI + Motion)',
+        'Capa de Datos Tipada (projects.ts)',
+        'Capa de Configuración (env + constants)',
+        'Servicios Externos (EmailJS + Vercel Analytics)',
+      ],
       dataFlow: [
-        'El router carga vistas por demanda con lazy loading.',
-        'Las secciones consumen datos tipados desde el data layer.',
-        'Framer Motion orquesta transiciones de entrada y estado.',
+        'El usuario entra a la SPA y el router carga Home con secciones composables.',
+        'En Projects, el sistema aplica filtros tipados y renderiza tarjetas optimizadas.',
+        'Al abrir un proyecto, se consulta por id en el data layer y se construye la vista técnica.',
+        'En Contact, se validan campos y anti-spam; luego se envía el payload a EmailJS.',
+        'Se reportan métricas de uso con Vercel Analytics y Speed Insights.',
       ],
     },
     highlights: [
-      'Diseño glassmorphism moderno',
-      'Animaciones de scroll interactivas',
-      'Tiempo de carga optimizado',
-      'SEO optimizado',
+      'Arquitectura modular escalable con separación clara de responsabilidades',
+      'Bundle splitting manual en Vite para mejorar caching y tiempo de carga inicial',
+      'ErrorBoundary, lazy loading y fallback UI para mayor resiliencia en producción',
+      'Formulario de contacto con validaciones tipadas, honeypot y rate limiting',
+      'Accesibilidad aplicada (skip link, labels asociadas, atributos ARIA clave)',
+      'SEO técnico completo: Open Graph, Twitter Cards, canonical y JSON-LD',
+      'Uso de TypeScript estricto para reducir errores y mejorar mantenibilidad',
     ],
   },
 ];
