@@ -59,43 +59,6 @@ El simulador permite crear repositorios, rastrear cambios, realizar commits y na
     ],
   },
   {
-    id: 'order-taking-app',
-    title: 'Aplicación de Toma de Pedidos',
-    shortDescription: 'Sistema para registrar pedidos en terreno para vendedores de una distribuidora de alimentos.',
-    fullDescription: `Aplicación móvil/web diseñada para optimizar el proceso de toma de pedidos en terreno para distribuidoras de alimentos.
-    
-Características principales:
-- Interfaz intuitiva para vendedores en terreno
-- Catálogo de productos con búsqueda rápida
-- Gestión de clientes y ruteros
-- Sincronización de datos offline/online
-- Generación de reportes y estadísticas
-
-La aplicación mejora significativamente la eficiencia de los vendedores, reduce errores en pedidos y facilita la gestión centralizada de ventas.`,
-    technologies: ['JavaScript', 'React', 'Node.js', 'REST API', 'Git'],
-    filters: ['React', 'Systems'],
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fm=webp&fit=crop&w=1100&q=72',
-    screenshots: [
-      'https://placehold.co/1200x720/0a0a0a/60a5fa?text=Order+App+Dashboard',
-      'https://placehold.co/1200x720/0a0a0a/22d3ee?text=Order+Sync+Workflow',
-    ],
-    diagram: {
-      architecture: ['Mobile UI', 'REST API', 'Sync Service', 'SQL Database'],
-      dataFlow: [
-        'El vendedor registra pedidos desde la interfaz mobile.',
-        'La app valida stock y cliente localmente para respuesta inmediata.',
-        'El servicio de sincronización envía cambios a la API REST.',
-        'La base SQL persiste pedidos y publica estado para reporting.',
-      ],
-    },
-    highlights: [
-      'Interfaz responsive optimizada para tablets',
-      'Modo offline con sincronización automática',
-      'Validación de inventarios en tiempo real',
-      'Sistema de notificaciones para actualizaciones',
-    ],
-  },
-  {
     id: 'portfolio-website',
     title: 'Portafolio Personal',
     shortDescription: 'SPA profesional para presentar perfil, stack y proyectos con arquitectura modular, SEO técnico y optimización de rendimiento.',
@@ -125,8 +88,8 @@ Enfoque técnico:
     filters: ['React'],
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
-      'https://placehold.co/1200x720/0a0a0a/818cf8?text=Portfolio+Hero+Scene',
-      'https://placehold.co/1200x720/0a0a0a/06b6d4?text=Portfolio+Project+Dashboard',
+      'public/projects/portafolio/hero.png',
+      'public/projects/portafolio/project.png',
     ],
     diagram: {
       architecture: [
@@ -194,8 +157,8 @@ Enfoque tecnico:
     filters: ['Systems'],
     image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
-      'https://placehold.co/1200x720/0a0a0a/22d3ee?text=DAP+Routing+Dashboard',
-      'https://placehold.co/1200x720/0a0a0a/6366f1?text=DAP+Route+Map+And+Schedule',
+      'public/projects/dap/map.png',
+      'public/projects/dap/dashboard.png',
     ],
     diagram: {
       architecture: [
@@ -260,10 +223,10 @@ Enfoque tecnico:
       'Render',
     ],
     filters: ['Systems'],
-    image: 'https://images.unsplash.com/photo-1522337094846-8a818eb186f3?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
-      'https://placehold.co/1200x720/0a0a0a/f472b6?text=Lash+Kingdom+Booking+Flow',
-      'https://placehold.co/1200x720/0a0a0a/ec4899?text=Lash+Kingdom+Admin+Dashboard',
+      'public/projects/lash/hero.png',
+      'public/projects/lash/reserva.png',
     ],
     diagram: {
       architecture: [
@@ -329,8 +292,8 @@ Enfoque tecnico:
     filters: ['Systems'],
     image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fm=webp&fit=crop&w=1100&q=72',
     screenshots: [
-      'https://placehold.co/1200x720/0a0a0a/f59e0b?text=Sales+Inventory+Dashboard',
-      'https://placehold.co/1200x720/0a0a0a/84cc16?text=Orders+And+Reports+Module',
+      'public/projects/kenopet/dashboard.png',
+      'public/projects/kenopet/pedido.png',
     ],
     diagram: {
       architecture: [

@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useProjectsWithTranslations } from '@hooks/useProjectsWithTranslations';
@@ -10,6 +11,23 @@ const ProjectDetails = () => {
   const navigate = useNavigate();
   const projects = useProjectsWithTranslations();
   const project = id ? projects.find(p => p.id === id) : undefined;
+  const [selectedScreenshot, setSelectedScreenshot] = useState<string | null>(null);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedScreenshot(null);
+      }
+    };
+
+    if (selectedScreenshot) {
+      window.addEventListener('keydown', onKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [selectedScreenshot]);
 
   if (!project) {
     return (
@@ -84,16 +102,24 @@ const ProjectDetails = () => {
             <h2 className="text-2xl font-semibold mb-4">{t('projectDetails.screenshots')}</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {project.screenshots.map((screenshot, index) => (
-                <div key={screenshot} className="overflow-hidden rounded-xl border border-white/10">
+                <motion.button
+                  key={screenshot}
+                  type="button"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.99 }}
+                  onClick={() => setSelectedScreenshot(screenshot)}
+                  className="overflow-hidden rounded-xl border border-white/10 text-left transition-colors hover:border-primary/50"
+                  aria-label={`${project.title} screenshot ${index + 1}`}
+                >
                   <img
                     src={screenshot}
                     alt={`${project.title} screenshot ${index + 1}`}
                     loading="lazy"
                     decoding="async"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="h-64 w-full object-cover"
+                    className="h-64 w-full cursor-zoom-in object-cover"
                   />
-                </div>
+                </motion.button>
               ))}
             </div>
           </div>
@@ -106,6 +132,42 @@ const ProjectDetails = () => {
             />
           </div>
         </motion.div>
+
+        <AnimatePresence>
+          {selectedScreenshot && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedScreenshot(null)}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4"
+            >
+              <motion.button
+                type="button"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => setSelectedScreenshot(null)}
+                className="absolute right-5 top-5 rounded-md border border-white/30 bg-black/40 px-3 py-1.5 text-sm text-white hover:bg-black/60"
+                aria-label="Close image preview"
+              >
+                Close
+              </motion.button>
+
+              <motion.img
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.24, ease: 'easeOut' }}
+                onClick={(event) => event.stopPropagation()}
+                src={selectedScreenshot}
+                alt={`${project.title} full preview`}
+                className="max-h-[90vh] w-auto max-w-[95vw] rounded-xl border border-white/20 object-contain shadow-2xl"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
