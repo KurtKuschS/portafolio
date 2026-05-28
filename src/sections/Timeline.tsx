@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 const timelineData = [
   { year: '2019' },
   { year: '2025' },
+  { year: '2026' },
 ];
 
 const Timeline = () => {

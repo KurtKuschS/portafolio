@@ -24,7 +24,8 @@
     "titleHighlight": "Mí",
     "paragraph1": "Ingeniero en Computación e Informática con experiencia en el desarrollo de sistemas web enfocados en gestión administrativa, plataformas de ventas y reservas.",
     "paragraph2": "Con enfoque <strong>Junior Backend / Full Stack</strong>, me especializo en desarrollo backend con Python y Django, Django REST Framework, y PHP con Laravel, trabajando con bases de datos relacionales como PostgreSQL y MySQL.",
-    "paragraph3": "También cuento con experiencia en frontend moderno usando React y TypeScript, y en despliegue de aplicaciones en plataformas cloud como Render y Vercel. Mi foco es construir software mantenible, escalable y bien estructurado, siguiendo buenas prácticas de ingeniería."
+    "paragraph3": "También cuento con experiencia en frontend moderno usando React y TypeScript, y en despliegue de aplicaciones en plataformas cloud como Render y Vercel. Mi foco es construir software mantenible, escalable y bien estructurado, siguiendo buenas prácticas de ingeniería.",
+    "paragraph4": "Actualmente trabajo en Procesadora Barranco Amarillo como Soporte TI, reforzando mi experiencia en soporte técnico, continuidad operativa y resolución de incidencias."
   },
   "skills": {
     "title": "Tech",
@@ -93,6 +94,10 @@
       "2025": {
         "title": "Finalización de carrera",
         "institution": "Universidad de Magallanes"
+      },
+      "2026": {
+        "title": "Soporte TI",
+        "institution": "Procesadora Barranco Amarillo"
       }
     }
   },

@@ -24,7 +24,8 @@
     "titleHighlight": "Me",
     "paragraph1": "Computer Engineering & Informatics professional with experience in developing web systems focused on administrative management, sales platforms, and booking systems.",
     "paragraph2": "With a <strong>Junior Backend / Full Stack</strong> focus, I specialize in backend development with Python and Django, Django REST Framework, and PHP with Laravel, working with relational databases such as PostgreSQL and MySQL.",
-    "paragraph3": "I also have experience in modern frontend using React and TypeScript, and in deploying applications on cloud platforms like Render and Vercel. My focus is to build maintainable, scalable, and well-structured software, following engineering best practices."
+    "paragraph3": "I also have experience in modern frontend using React and TypeScript, and in deploying applications on cloud platforms like Render and Vercel. My focus is to build maintainable, scalable, and well-structured software, following engineering best practices.",
+    "paragraph4": "I currently work at Procesadora Barranco Amarillo as IT Support, strengthening my experience in technical support, operational continuity, and incident resolution."
   },
   "skills": {
     "title": "Tech",
@@ -93,6 +94,10 @@
       "2025": {
         "title": "Graduation",
         "institution": "Universidad de Magallanes"
+      },
+      "2026": {
+        "title": "IT Support",
+        "institution": "Procesadora Barranco Amarillo"
       }
     }
   },
