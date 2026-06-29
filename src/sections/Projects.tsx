@@ -145,7 +145,7 @@ const Projects = () => {
           <motion.div
             className="flex"
             animate={{ x: `-${(startIndex * 100) / itemsPerView}%` }}
-            transition={{ type: 'spring', stiffness: 260, damping: 32 }}
+            transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
           >
             {filteredProjects.map((project, index) => (
               <div

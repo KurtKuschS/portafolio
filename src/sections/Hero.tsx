@@ -17,11 +17,6 @@ const Hero = () => {
         <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-background" />}>
           <AnimatedBackground />
         </Suspense>
-        <div className="absolute inset-0 animated-gradient opacity-[0.14]" />
-
-        {/* Floating Orbs — CSS animation runs on the compositor thread, not JS */}
-        <div className="hero-orb-1 absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-        <div className="hero-orb-2 absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">

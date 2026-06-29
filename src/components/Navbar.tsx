@@ -50,7 +50,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-background/95 border-b border-white/10 shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,7 +110,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-t border-white/10 bg-surface/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-white/10 bg-background/98">
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-3">
             {MENU_ITEMS.map((item) => (
               <a

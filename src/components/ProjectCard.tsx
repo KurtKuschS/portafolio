@@ -14,14 +14,12 @@ const ProjectCard = memo(({ project, index, onClick }: ProjectCardProps) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 26 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -16 }}
-      transition={{ duration: ANIMATION_TIMINGS.duration.card, delay: index * ANIMATION_TIMINGS.stagger.short }}
-      whileHover={{ y: -10 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25, delay: index * ANIMATION_TIMINGS.stagger.short }}
       onClick={onClick}
-      className="glass-effect rounded-xl p-6 cursor-pointer group"
+      className="glass-effect rounded-xl p-6 cursor-pointer group hover:-translate-y-2 transition-transform duration-200"
     >
       {/* Image Placeholder */}
       <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
@@ -75,13 +73,11 @@ const ProjectCard = memo(({ project, index, onClick }: ProjectCardProps) => {
       </div>
 
       {/* Button */}
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-full py-2 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold glow-button"
+      <button
+        className="w-full py-2 bg-gradient-to-r from-primary to-accent rounded-lg font-semibold glow-button hover:opacity-90 transition-opacity"
       >
         {t('projects.viewDetails')}
-      </motion.button>
+      </button>
     </motion.div>
   );
 });
