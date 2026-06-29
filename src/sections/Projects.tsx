@@ -116,7 +116,7 @@ const Projects = () => {
 
         <div className="mb-6 flex items-center justify-between">
           <p className="text-sm text-gray-400">
-            Mostrando {Math.min(itemsPerView, filteredProjects.length)} de {filteredProjects.length} proyectos
+            {t('projects.showing', { shown: Math.min(itemsPerView, filteredProjects.length), total: filteredProjects.length })}
           </p>
 
           {canSlide && (
@@ -124,7 +124,7 @@ const Projects = () => {
               <button
                 onClick={handlePrev}
                 disabled={startIndex === 0}
-                aria-label="Ver proyectos anteriores"
+                aria-label={t('projects.prevPage')}
                 className="rounded-lg border border-white/20 bg-surface/40 px-3 py-2 text-sm text-white transition-colors hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 ←
@@ -132,7 +132,7 @@ const Projects = () => {
               <button
                 onClick={handleNext}
                 disabled={startIndex >= maxStartIndex}
-                aria-label="Ver proyectos siguientes"
+                aria-label={t('projects.nextPage')}
                 className="rounded-lg border border-white/20 bg-surface/40 px-3 py-2 text-sm text-white transition-colors hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 →

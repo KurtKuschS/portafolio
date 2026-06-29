@@ -33,7 +33,7 @@ const ProjectDetails = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center px-4">
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-4">Proyecto no encontrado</h1>
+          <h1 className="text-3xl font-bold mb-4">{t('projectDetails.notFound')}</h1>
           <button
             onClick={() => navigate('/')}
             className="px-6 py-3 bg-primary rounded-lg hover:bg-primary/80 transition-colors"

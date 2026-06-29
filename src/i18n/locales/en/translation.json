@@ -30,6 +30,7 @@
   "skills": {
     "title": "Tech",
     "titleHighlight": "Stack",
+    "chartTitle": "Skills Distribution",
     "categories": {
       "backend": "Backend",
       "frontend": "Frontend",
@@ -66,6 +67,9 @@
     "titleHighlight": "Projects",
     "description": "A selection of projects that demonstrate my technical skills in software development, system architecture, and complex problem solving.",
     "viewDetails": "View Details",
+    "showing": "Showing {{shown}} of {{total}} projects",
+    "prevPage": "Previous projects",
+    "nextPage": "Next projects",
     "filters": {
       "all": "All",
       "c": "C",
@@ -74,6 +78,7 @@
     }
   },
   "projectDetails": {
+    "notFound": "Project not found",
     "backToProjects": "Back to Projects",
     "technologies": "Technologies",
     "architecture": "Architecture",
@@ -117,6 +122,7 @@
       "emailPlaceholder": "your@email.com",
       "message": "Message",
       "messagePlaceholder": "Your message",
+      "messageMinLength": "minimum 10 characters",
       "submit": "Send Message",
       "submitting": "Sending...",
       "success": "Message sent successfully. I'll reply soon.",
@@ -129,6 +135,11 @@
         "networkError": "Could not send message. Check your connection."
       }
     }
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "Sorry, an unexpected error occurred.",
+    "backHome": "Back to Home"
   },
   "footer": {
     "copyright": "© {{year}} Kurt Dereck Kusch Sepúlveda. All rights reserved."

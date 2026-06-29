@@ -1,4 +1,5 @@
 import { memo, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import {
   PolarGrid,
@@ -20,6 +21,7 @@ interface SkillRadarChartProps {
 }
 
 const SkillRadarChart = memo(({ data }: SkillRadarChartProps) => {
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const SkillRadarChart = memo(({ data }: SkillRadarChartProps) => {
       className="glass-effect w-full min-w-0 rounded-2xl p-4 sm:p-6"
     >
       <h3 className="mb-4 text-lg font-semibold text-gray-100">
-        Skills Distribution
+        {t('skills.chartTitle')}
       </h3>
 
       <div className="mx-auto h-[320px] w-full max-w-2xl min-w-0">

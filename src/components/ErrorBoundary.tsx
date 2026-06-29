@@ -1,4 +1,5 @@
 import { Component, type ReactNode } from 'react';
+import i18n from '../i18n/config';
 
 interface Props {
   children: ReactNode;
@@ -35,16 +36,16 @@ class ErrorBoundary extends Component<Props, State> {
           <div className="glass-effect rounded-2xl p-8 text-center">
             <div className="mb-4 text-6xl">⚠️</div>
             <h1 className="mb-4 text-2xl font-bold text-white">
-              Algo salió mal
+              {i18n.t('error.title')}
             </h1>
             <p className="mb-6 text-gray-400">
-              Lo sentimos, ocurrió un error inesperado.
+              {i18n.t('error.description')}
             </p>
             <button
               onClick={() => window.location.href = '/'}
               className="rounded-lg bg-gradient-to-r from-primary to-accent px-6 py-3 font-semibold text-white transition-transform hover:scale-105"
             >
-              Volver al inicio
+              {i18n.t('error.backHome')}
             </button>
           </div>
         </div>

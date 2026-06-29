@@ -214,7 +214,7 @@ const Contact = () => {
 
               <div>
                 <label htmlFor="contact-message" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.form.message')} <span className="text-gray-500 text-xs">(mínimo 10 caracteres)</span>
+                  {t('contact.form.message')} <span className="text-gray-500 text-xs">({t('contact.form.messageMinLength')})</span>
                 </label>
                 <textarea
                   id="contact-message"

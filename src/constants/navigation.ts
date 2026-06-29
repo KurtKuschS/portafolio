@@ -1,4 +1,4 @@
-export type SectionId = 'hero' | 'about' | 'skills' | 'projects' | 'timeline' | 'contact';
+export type SectionId = 'hero' | 'about' | 'skills' | 'projects' | 'timeline' | 'philosophy' | 'contact';
 
 export interface MenuItem {
   key: string;
@@ -11,5 +11,6 @@ export const MENU_ITEMS: MenuItem[] = [
   { key: 'nav.skills', href: '#skills' },
   { key: 'nav.projects', href: '#projects' },
   { key: 'nav.timeline', href: '#timeline' },
+  { key: 'nav.philosophy', href: '#philosophy' },
   { key: 'nav.contact', href: '#contact' },
 ] as const;
