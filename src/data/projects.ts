@@ -1,4 +1,4 @@
-export const PROJECT_FILTERS = ['All', 'C', 'React', 'Systems'] as const;
+export const PROJECT_FILTERS = ['All', 'C', 'React', 'Systems', 'SaaS'] as const;
 export type ProjectFilter = Exclude<(typeof PROJECT_FILTERS)[number], 'All'>;
 
 export interface ProjectDiagram {
@@ -323,6 +323,79 @@ Enfoque tecnico:
       'Listados con paginacion y filtros combinados sin recarga completa de pagina',
       'Hardening HTTP con CSP, HSTS, X-Frame-Options y X-Content-Type-Options',
       'Arquitectura MVC escalable con separacion clara de responsabilidades',
+    ],
+  },
+  {
+    id: 'saas-booking-platform',
+    title: 'Agendalop — SaaS de Reservas Multi-Tenant',
+    shortDescription:
+      'Plataforma SaaS multi-tenant para negocios de belleza: sitio web propio por negocio, booking público sin login, dashboard operativo y panel de administración de la plataforma.',
+    fullDescription: `Agendalop es una plataforma SaaS multi-tenant de reservas para negocios de belleza (peluquerías, nail studios, centros de estética) con lanzamiento inicial en Punta Arenas, Chile.
+
+Problema que resuelve:
+- Elimina la gestión de citas por WhatsApp o llamadas, que genera dobles reservas y pérdida de trazabilidad.
+- Cada negocio tiene identidad visual propia, no un link genérico de plataforma.
+- Centraliza servicios, profesionales, horarios, galería y facturación desde un único dashboard.
+- Permite al cliente final reservar sin crear cuenta ni descargar apps.
+
+Enfoque técnico:
+- Arquitectura multi-tenant con aislamiento por RLS en Supabase: cada negocio solo accede a sus propios datos.
+- Routing por subdominio con contexto de tenant resuelto en frontend (TenantContext).
+- Auth con Supabase Auth + RBAC granular (owner, professional, platform_admin).
+- Disponibilidad calculada en tiempo real para evitar conflictos de agenda.
+- Panel de plataforma (superadmin) con gestión de tenants, suscripciones, pagos, auditoría y feature flags.
+- Editor de sitio web por bloques JSON para personalización sin código.`,
+    technologies: [
+      'React 18',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'TanStack Query',
+      'React Hook Form',
+      'Zod',
+      'Supabase',
+      'PostgreSQL',
+      'RLS / RBAC',
+      'Supabase Auth',
+      'Supabase Storage',
+      'Edge Functions',
+      'React Router DOM',
+      'Vercel',
+    ],
+    filters: ['React', 'Systems', 'SaaS'],
+    image: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    screenshots: [
+      'public/projects/agendalop/landing.png',
+      'public/projects/agendalop/dashboard.png',
+    ],
+    diagram: {
+      architecture: [
+        'Landing pública: presentación del SaaS y planes de suscripción',
+        'Sitio público por tenant: home, servicios, galería, FAQ, contacto y booking',
+        'Dashboard privado: citas, servicios, profesionales, horarios, galería, editor web y billing',
+        'Panel de plataforma (superadmin): tenants, suscripciones, pagos, auditoría, flags y seguridad',
+        'Supabase: PostgreSQL + Auth + Storage + RLS + Edge Functions',
+        'TenantContext: resolución de tenant por subdominio en frontend',
+      ],
+      dataFlow: [
+        'El cliente final entra al subdominio del negocio y ve su sitio web personalizado.',
+        'Selecciona servicio, profesional y horario; el motor consulta disponibilidad en tiempo real.',
+        'El sistema persiste la reserva verificando que no haya conflicto de agenda.',
+        'El owner gestiona citas, servicios, horarios y galería desde el dashboard privado.',
+        'El editor de sitio web permite personalizar bloques JSON sin tocar código.',
+        'El superadmin gestiona tenants, planes, pagos y auditoría desde el panel de plataforma.',
+        'TanStack Query mantiene el estado del cliente con stale-time y revalidación automática.',
+      ],
+    },
+    highlights: [
+      'Arquitectura multi-tenant con RLS en PostgreSQL: aislamiento total entre negocios',
+      'Routing por subdominio con TenantContext resuelto dinámicamente en frontend',
+      'Auth con Supabase Auth + RBAC granular (owner, professional, platform_admin)',
+      'Motor de disponibilidad en tiempo real sin conflictos de agenda',
+      'Editor de sitio web por bloques JSON: personalización visual sin código',
+      'Panel de plataforma con gestión de tenants, suscripciones, pagos y feature flags',
+      'Booking público sin login: el cliente reserva en segundos desde cualquier dispositivo',
+      'Caché inteligente con TanStack Query para UX fluida y reducción de requests a Supabase',
     ],
   },
 ];

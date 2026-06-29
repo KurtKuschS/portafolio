@@ -22,6 +22,7 @@ const Projects = () => {
     'C': 'projects.filters.c',
     'React': 'projects.filters.react',
     'Systems': 'projects.filters.systems',
+    'SaaS': 'projects.filters.saas',
   };
 
   useEffect(() => {

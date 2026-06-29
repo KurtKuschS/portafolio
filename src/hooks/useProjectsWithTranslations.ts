@@ -24,6 +24,7 @@ export const useProjectsWithTranslations = (): Project[] => {
 
   return useMemo(() => {
     const projectIds = [
+      'saas-booking-platform',
       'git-simulator',
       'portfolio-website',
       'dap-transport-routing-system',

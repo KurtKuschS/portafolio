@@ -74,7 +74,8 @@
       "all": "All",
       "c": "C",
       "react": "React",
-      "systems": "Systems"
+      "systems": "Systems",
+      "saas": "SaaS"
     }
   },
   "projectDetails": {
@@ -145,6 +146,41 @@
     "copyright": "© {{year}} Kurt Dereck Kusch Sepúlveda. All rights reserved."
   },
   "projectsData": {
+    "saas-booking-platform": {
+      "title": "Agendalop — Multi-Tenant Booking SaaS",
+      "shortDescription": "Multi-tenant SaaS platform for beauty businesses: custom website per tenant, public booking without login, operational dashboard, and platform admin panel.",
+      "fullDescription": "Agendalop is a multi-tenant SaaS booking platform for beauty businesses (hair salons, nail studios, aesthetic centers) with initial launch in Punta Arenas, Chile.\n\nProblem it solves:\n- Eliminates appointment management via WhatsApp or calls, which causes double bookings and lost traceability.\n- Each business has its own visual identity, not a generic platform link.\n- Centralizes services, professionals, schedules, gallery, and billing from a single dashboard.\n- Lets end clients book without creating an account or downloading any app.\n\nTechnical approach:\n- Multi-tenant architecture with RLS isolation in Supabase: each business only accesses its own data.\n- Subdomain-based routing with tenant context resolved in frontend (TenantContext).\n- Auth with Supabase Auth + granular RBAC (owner, professional, platform_admin).\n- Real-time availability calculation to prevent scheduling conflicts.\n- Platform panel (superadmin) for tenant management, subscriptions, payments, auditing, and feature flags.\n- Website editor via JSON blocks for code-free visual customization.",
+      "technologies": ["React 18", "TypeScript", "Vite", "Tailwind CSS", "TanStack Query", "React Hook Form", "Zod", "Supabase", "PostgreSQL", "RLS / RBAC", "Supabase Auth", "Supabase Storage", "Edge Functions", "React Router DOM", "Vercel"],
+      "highlights": [
+        "Multi-tenant architecture with RLS in PostgreSQL: full isolation between businesses",
+        "Subdomain routing with TenantContext resolved dynamically in frontend",
+        "Auth with Supabase Auth + granular RBAC (owner, professional, platform_admin)",
+        "Real-time availability engine with no scheduling conflicts",
+        "JSON-block website editor: visual customization without code",
+        "Platform panel with tenant, subscription, payment, and feature flag management",
+        "Public booking without login: clients book in seconds from any device",
+        "Smart caching with TanStack Query for smooth UX and reduced Supabase requests"
+      ],
+      "diagram": {
+        "architecture": [
+          "Public landing: SaaS presentation and subscription plans",
+          "Per-tenant public site: home, services, gallery, FAQ, contact, and booking",
+          "Private dashboard: appointments, services, professionals, schedules, gallery, website editor, and billing",
+          "Platform panel (superadmin): tenants, subscriptions, payments, audit, flags, and security",
+          "Supabase: PostgreSQL + Auth + Storage + RLS + Edge Functions",
+          "TenantContext: tenant resolution by subdomain in frontend"
+        ],
+        "dataFlow": [
+          "End client visits the business subdomain and sees its custom website.",
+          "Selects service, professional, and time slot; engine queries real-time availability.",
+          "System persists the booking after verifying no scheduling conflict exists.",
+          "Owner manages appointments, services, schedules, and gallery from private dashboard.",
+          "Website editor lets them customize JSON blocks without touching code.",
+          "Superadmin manages tenants, plans, payments, and audit from the platform panel.",
+          "TanStack Query maintains client-side state with stale-time and automatic revalidation."
+        ]
+      }
+    },
     "git-simulator": {
       "title": "Git Simulator in C",
       "shortDescription": "Implementation of init, add, commit, log, and checkout commands using data structures and file handling.",
