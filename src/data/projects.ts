@@ -86,7 +86,7 @@ Enfoque técnico:
       'EmailJS',
     ],
     filters: ['React'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    image: '/projects/portafolio/portafolio.png',
     screenshots: [
       'public/projects/portafolio/hero.png',
       'public/projects/portafolio/project.png',
@@ -155,7 +155,7 @@ Enfoque tecnico:
       'PHP-FPM',
     ],
     filters: ['Systems'],
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    image: '/projects/dap/dashboard.png',
     screenshots: [
       'public/projects/dap/map.png',
       'public/projects/dap/dashboard.png',
@@ -223,7 +223,7 @@ Enfoque tecnico:
       'Render',
     ],
     filters: ['Systems'],
-    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    image: '/projects/lash/hero.png',
     screenshots: [
       'public/projects/lash/hero.png',
       'public/projects/lash/reserva.png',
