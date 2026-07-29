@@ -411,10 +411,11 @@ El agente de balanzas (Worker Service) captura datos de básculas industriales p
 Gran parte del trabajo requirió analizar en profundidad el esquema de base de datos y los procesos existentes de la planta (stored procedures, triggers, reglas de negocio no documentadas) para diseñar una plataforma nueva que conviviera de forma segura con los sistemas operativos ya en producción, sin interrumpir la operación diaria.`,
     technologies: ['C#', '.NET 8', 'Blazor Server', 'Entity Framework Core', 'SQL Server', 'SQLite', 'Worker Service', 'TCP/IP', 'Serial Port'],
     filters: ['Systems'],
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1100&q=80',
+    image: 'public/projects/plataforma-produccion-industrial/dashboard-produccion.png',
     screenshots: [
-      'https://placehold.co/1200x720/0a0a0a/34d399?text=Dashboards+KPI+Tiempo+Real',
-      'https://placehold.co/1200x720/0a0a0a/fbbf24?text=Agente+Balanzas+Arquitectura',
+      'public/projects/plataforma-produccion-industrial/dashboard-produccion.png',
+      'public/projects/plataforma-produccion-industrial/pivot-informe-procesos.png',
+      'public/projects/plataforma-produccion-industrial/nueva-recepcion-mmpp.png',
     ],
     diagram: {
       architecture: ['Balanzas (TCP/Serial)', 'Worker Service (Parsers + Spool SQLite)', 'SQL Server', 'Blazor Server Dashboard', 'Motor de Pivot/KPI'],
