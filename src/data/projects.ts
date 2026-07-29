@@ -128,8 +128,6 @@ Este proyecto incorpora:
       'SEO optimizado',
     ],
   },
-];
-
   {
     id: 'plataforma-produccion-industrial',
     title: 'Plataforma de Producción Industrial (Blazor + Worker Service)',
