@@ -130,6 +130,43 @@ Este proyecto incorpora:
   },
 ];
 
+  {
+    id: 'plataforma-produccion-industrial',
+    title: 'Plataforma de Producción Industrial (Blazor + Worker Service)',
+    shortDescription: 'Suite de dashboards en tiempo real y agente de captura de balanzas industriales para una planta procesadora de alimentos.',
+    fullDescription: `Plataforma interna desarrollada para una planta procesadora de alimentos, compuesta por dos servicios .NET 8 que trabajan en conjunto: un dashboard web Blazor Server y un worker service de captura de datos desde hardware de planta.
+
+El dashboard (Blazor Server, EF Core 8, SQL Server) expone más de 120 páginas cubriendo recepción de materia prima, frigorífico, empaque, procesos, calidad, comercial y maestros, con KPIs recalculados en tiempo real (stock, producción, pre-embarque) y un motor de pivot tables genérico para informes configurables.
+
+El agente de balanzas (Worker Service) captura datos de básculas industriales por TCP y puerto serie (múltiples protocolos de fabricantes distintos), normaliza lecturas de peso, y las persiste vía sinks especializados (empaque, materia prima, peso vivo) con un spool durable en SQLite para tolerar cortes de red sin perder datos.
+
+Gran parte del trabajo requirió analizar en profundidad el esquema de base de datos y los procesos existentes de la planta (stored procedures, triggers, reglas de negocio no documentadas) para diseñar una plataforma nueva que conviviera de forma segura con los sistemas operativos ya en producción, sin interrumpir la operación diaria.`,
+    technologies: ['C#', '.NET 8', 'Blazor Server', 'Entity Framework Core', 'SQL Server', 'SQLite', 'Worker Service', 'TCP/IP', 'Serial Port'],
+    filters: ['Systems'],
+    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1100&q=80',
+    screenshots: [
+      'https://placehold.co/1200x720/0a0a0a/34d399?text=Dashboards+KPI+Tiempo+Real',
+      'https://placehold.co/1200x720/0a0a0a/fbbf24?text=Agente+Balanzas+Arquitectura',
+    ],
+    diagram: {
+      architecture: ['Balanzas (TCP/Serial)', 'Worker Service (Parsers + Spool SQLite)', 'SQL Server', 'Blazor Server Dashboard', 'Motor de Pivot/KPI'],
+      dataFlow: [
+        'Las balanzas envían lecturas de peso por TCP o puerto serie.',
+        'El worker service parsea el protocolo específico y encola la lectura en un spool durable.',
+        'Los sinks persisten la lectura normalizada en SQL Server, tolerando cortes de red.',
+        'El dashboard Blazor consulta los datos vía EF Core y recalcula KPIs e informes pivot en tiempo real.',
+      ],
+    },
+    highlights: [
+      'Más de 120 páginas Blazor cubriendo producción, frigorífico, empaque y calidad',
+      'Motor de pivot tables genérico para informes configurables sin código nuevo',
+      'Captura de balanzas industriales multi-protocolo (TCP y serie) con spool durable ante cortes de red',
+      'Análisis profundo de sistemas y datos de planta para integrar la nueva plataforma sin interrumpir operación',
+      'KPIs recalculados en tiempo real (stock, producción, pre-embarque)',
+    ],
+  },
+];
+
 export const getProjectById = (id: string): Project | undefined => {
   return projects.find((project) => project.id === id);
 };
