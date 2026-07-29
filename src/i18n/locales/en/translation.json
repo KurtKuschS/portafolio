@@ -357,6 +357,28 @@
           "Each CRUD operation triggers automatic auditing with user, IP, and previous/new changes."
         ]
       }
+    },
+    "plataforma-produccion-industrial": {
+      "title": "Industrial Production Platform (Blazor + Worker Service)",
+      "shortDescription": "Real-time dashboard suite and an industrial scale-capture agent for a food processing plant.",
+      "fullDescription": "Internal platform built for a food processing plant, made up of two .NET 8 services working together: a Blazor Server web dashboard and a worker service that captures data from plant hardware.\n\nThe dashboard (Blazor Server, EF Core 8, SQL Server) exposes over 120 pages covering raw material receiving, cold storage, packing, processes, quality, sales, and master data, with real-time recalculated KPIs (stock, production, pre-shipment) and a generic pivot table engine for configurable reports.\n\nThe scale agent (Worker Service) captures readings from industrial scales over TCP and serial port (multiple vendor protocols), normalizes the weight readings, and persists them through specialized sinks (packing, raw material, live weight) with a durable SQLite spool to survive network outages without losing data.\n\nMuch of the work required deeply analyzing the plant's existing database schema and processes (stored procedures, triggers, undocumented business rules) to design a new platform that could coexist safely with systems already running in production, without disrupting daily operations.",
+      "technologies": ["C#", ".NET 8", "Blazor Server", "Entity Framework Core", "SQL Server", "SQLite", "Worker Service", "TCP/IP", "Serial Port"],
+      "highlights": [
+        "Over 120 Blazor pages covering production, cold storage, packing, and quality",
+        "Generic pivot table engine for configurable reports without new code",
+        "Multi-protocol industrial scale capture (TCP and serial) with durable spool for network outages",
+        "In-depth analysis of plant systems and data to integrate the new platform without disrupting operations",
+        "Real-time recalculated KPIs (stock, production, pre-shipment)"
+      ],
+      "diagram": {
+        "architecture": ["Scales (TCP/Serial)", "Worker Service (Parsers + SQLite Spool)", "SQL Server", "Blazor Server Dashboard", "Pivot/KPI Engine"],
+        "dataFlow": [
+          "Scales send weight readings over TCP or serial port.",
+          "The worker service parses the specific protocol and queues the reading in a durable spool.",
+          "Sinks persist the normalized reading to SQL Server, tolerating network outages.",
+          "The Blazor dashboard queries the data via EF Core and recalculates KPIs and pivot reports in real time."
+        ]
+      }
     }
   }
 }

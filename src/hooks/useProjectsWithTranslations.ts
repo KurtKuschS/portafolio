@@ -30,6 +30,7 @@ export const useProjectsWithTranslations = (): Project[] => {
       'dap-transport-routing-system',
       'lash-kingdom-booking-platform',
       'sales-inventory-admin-system',
+      'plataforma-produccion-industrial',
     ];
 
     return projectIds.map((id) => {
