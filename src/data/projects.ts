@@ -363,11 +363,14 @@ Enfoque técnico:
       'Vercel',
     ],
     filters: ['React', 'Systems', 'SaaS'],
-    image: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fm=webp&fit=crop&w=1100&q=72',
+    image: 'public/projects/agendalop/landing.png',
     screenshots: [
       'public/projects/agendalop/landing.png',
       'public/projects/agendalop/dashboard.png',
+      'public/projects/agendalop/como-funciona.png',
+      'public/projects/agendalop/precios.png',
     ],
+    demo: 'https://www.agendalop.cl/',
     diagram: {
       architecture: [
         'Landing pública: presentación del SaaS y planes de suscripción',
@@ -432,6 +435,42 @@ Gran parte del trabajo requirió analizar en profundidad el esquema de base de d
       'Captura de balanzas industriales multi-protocolo (TCP y serie) con spool durable ante cortes de red',
       'Análisis profundo de sistemas y datos de planta para integrar la nueva plataforma sin interrumpir operación',
       'KPIs recalculados en tiempo real (stock, producción, pre-embarque)',
+    ],
+  },
+  {
+    id: 'milodon-producciones',
+    title: 'Milodon Producciones — Sitio de Eventos',
+    shortDescription: 'Landing comercial para una productora de eventos en Punta Arenas: catálogo de servicios, packs con precios y cotización directa por WhatsApp.',
+    fullDescription: `Sitio web comercial para Milodon Producciones, empresa de producción de eventos en la Región de Magallanes (cámara 360°, tótems fotográficos, pista LED, robot fotográfico, amplificación e iluminación).
+
+Construido con Next.js 16 (App Router) y React 19, con animaciones de scroll con GSAP y scroll suave con Lenis. El catálogo de servicios y los packs combinados se modelan como datos tipados en TypeScript, permitiendo listar precios, descuentos por combo y disponibilidad sin tocar los componentes de UI.
+
+Incluye páginas dedicadas para servicios destacados (Pista LED, Robot Fotográfico) con su propio hero y CTA de cotización, además de botones de contacto directo a WhatsApp para agilizar la conversión desde la landing.`,
+    technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'GSAP', 'Lenis'],
+    filters: ['React'],
+    image: 'public/projects/milodon-producciones/hero.png',
+    screenshots: [
+      'public/projects/milodon-producciones/hero.png',
+      'public/projects/milodon-producciones/servicios.png',
+      'public/projects/milodon-producciones/packs.png',
+      'public/projects/milodon-producciones/pista-led.png',
+    ],
+    demo: 'https://milodon-producciones.vercel.app/',
+    diagram: {
+      architecture: ['Next.js App Router', 'Datos tipados (servicios/packs/pricing)', 'Secciones con scroll reveal (GSAP + Lenis)', 'CTA WhatsApp'],
+      dataFlow: [
+        'Los datos de servicios y packs se definen como catálogos TypeScript tipados en `data/`.',
+        'Cada sección de la landing (Servicios, Packs, Galería) renderiza esos catálogos como cards.',
+        'GSAP + Lenis animan la entrada de secciones y el scroll suave general del sitio.',
+        'Los botones de cotización llevan directo a WhatsApp con el servicio/pack preseleccionado.',
+      ],
+    },
+    highlights: [
+      'Catálogo de servicios y packs combinados modelado como datos tipados, no hardcodeado en JSX',
+      'Páginas dedicadas por servicio destacado (Pista LED, Robot Fotográfico) con su propio hero',
+      'Scroll reveal con GSAP y scroll suave con Lenis',
+      'Conversión directa a WhatsApp desde múltiples puntos de la landing',
+      'Deploy en Vercel con Next.js 16 y React 19',
     ],
   },
 ];

@@ -379,6 +379,28 @@
           "El dashboard Blazor consulta los datos vía EF Core y recalcula KPIs e informes pivot en tiempo real."
         ]
       }
+    },
+    "milodon-producciones": {
+      "title": "Milodon Producciones — Sitio de Eventos",
+      "shortDescription": "Landing comercial para una productora de eventos en Punta Arenas: catálogo de servicios, packs con precios y cotización directa por WhatsApp.",
+      "fullDescription": "Sitio web comercial para Milodon Producciones, empresa de producción de eventos en la Región de Magallanes (cámara 360°, tótems fotográficos, pista LED, robot fotográfico, amplificación e iluminación).\n\nConstruido con Next.js 16 (App Router) y React 19, con animaciones de scroll con GSAP y scroll suave con Lenis. El catálogo de servicios y los packs combinados se modelan como datos tipados en TypeScript, permitiendo listar precios, descuentos por combo y disponibilidad sin tocar los componentes de UI.\n\nIncluye páginas dedicadas para servicios destacados (Pista LED, Robot Fotográfico) con su propio hero y CTA de cotización, además de botones de contacto directo a WhatsApp para agilizar la conversión desde la landing.",
+      "technologies": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "GSAP", "Lenis"],
+      "highlights": [
+        "Catálogo de servicios y packs combinados modelado como datos tipados, no hardcodeado en JSX",
+        "Páginas dedicadas por servicio destacado (Pista LED, Robot Fotográfico) con su propio hero",
+        "Scroll reveal con GSAP y scroll suave con Lenis",
+        "Conversión directa a WhatsApp desde múltiples puntos de la landing",
+        "Deploy en Vercel con Next.js 16 y React 19"
+      ],
+      "diagram": {
+        "architecture": ["Next.js App Router", "Datos tipados (servicios/packs/pricing)", "Secciones con scroll reveal (GSAP + Lenis)", "CTA WhatsApp"],
+        "dataFlow": [
+          "Los datos de servicios y packs se definen como catálogos TypeScript tipados en `data/`.",
+          "Cada sección de la landing (Servicios, Packs, Galería) renderiza esos catálogos como cards.",
+          "GSAP + Lenis animan la entrada de secciones y el scroll suave general del sitio.",
+          "Los botones de cotización llevan directo a WhatsApp con el servicio/pack preseleccionado."
+        ]
+      }
     }
   }
 }

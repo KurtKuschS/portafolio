@@ -379,6 +379,28 @@
           "The Blazor dashboard queries the data via EF Core and recalculates KPIs and pivot reports in real time."
         ]
       }
+    },
+    "milodon-producciones": {
+      "title": "Milodon Producciones — Event Services Site",
+      "shortDescription": "Commercial landing page for an event production company in Punta Arenas: service catalog, bundled packs with pricing, and direct WhatsApp quoting.",
+      "fullDescription": "Commercial website for Milodon Producciones, an event production company in the Magallanes region (360° photo booth, photo totems, LED dance floor, photo robot, sound and lighting).\n\nBuilt with Next.js 16 (App Router) and React 19, with scroll animations powered by GSAP and smooth scrolling via Lenis. The service catalog and bundled packs are modeled as typed TypeScript data, so pricing, combo discounts, and availability can be updated without touching UI components.\n\nIncludes dedicated pages for flagship services (LED Dance Floor, Photo Robot) each with its own hero and quote CTA, plus direct WhatsApp contact buttons throughout the landing to drive conversion.",
+      "technologies": ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "GSAP", "Lenis"],
+      "highlights": [
+        "Service catalog and bundled packs modeled as typed data, not hardcoded in JSX",
+        "Dedicated pages per flagship service (LED Dance Floor, Photo Robot) each with its own hero",
+        "Scroll reveal animations with GSAP and smooth scrolling with Lenis",
+        "Direct-to-WhatsApp conversion from multiple points on the landing",
+        "Deployed on Vercel with Next.js 16 and React 19"
+      ],
+      "diagram": {
+        "architecture": ["Next.js App Router", "Typed data (services/packs/pricing)", "Scroll-reveal sections (GSAP + Lenis)", "WhatsApp CTA"],
+        "dataFlow": [
+          "Services and packs are defined as typed TypeScript catalogs in `data/`.",
+          "Each landing section (Services, Packs, Gallery) renders those catalogs as cards.",
+          "GSAP + Lenis animate section entry and the site's overall smooth scroll.",
+          "Quote buttons link directly to WhatsApp with the service/pack pre-selected."
+        ]
+      }
     }
   }
 }

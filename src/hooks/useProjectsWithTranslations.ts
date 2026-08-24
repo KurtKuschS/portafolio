@@ -31,6 +31,7 @@ export const useProjectsWithTranslations = (): Project[] => {
       'lash-kingdom-booking-platform',
       'sales-inventory-admin-system',
       'plataforma-produccion-industrial',
+      'milodon-producciones',
     ];
 
     return projectIds.map((id) => {
