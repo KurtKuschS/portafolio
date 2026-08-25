@@ -101,8 +101,12 @@
         "title": "Finalización de carrera",
         "institution": "Universidad de Magallanes"
       },
-      "2026": {
+      "2026-soporte-ti": {
         "title": "Soporte TI",
+        "institution": "Procesadora Barranco Amarillo"
+      },
+      "2026-analista-desarrollador": {
+        "title": "Analista de Sistemas y Desarrollador TI",
         "institution": "Procesadora Barranco Amarillo"
       }
     }

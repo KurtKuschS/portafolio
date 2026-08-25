@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const timelineData = [
-  { year: '2019' },
-  { year: '2025' },
-  { year: '2026' },
+  { id: '2019', year: '2019' },
+  { id: '2025', year: '2025' },
+  { id: '2026-soporte-ti', year: '2026' },
+  { id: '2026-analista-desarrollador', year: '2026' },
 ];
 
 const Timeline = () => {
@@ -36,7 +37,7 @@ const Timeline = () => {
 
           {timelineData.map((item, index) => (
             <motion.div
-              key={item.year}
+              key={item.id}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.3 }}
@@ -52,8 +53,8 @@ const Timeline = () => {
 
               <div className="ml-8 glass-effect rounded-xl p-6 flex-1">
                 <span className="text-primary font-bold text-lg">{item.year}</span>
-                <h3 className="text-xl font-semibold mt-2 mb-2">{t(`timeline.events.${item.year}.title`)}</h3>
-                <p className="text-gray-400">{t(`timeline.events.${item.year}.institution`)}</p>
+                <h3 className="text-xl font-semibold mt-2 mb-2">{t(`timeline.events.${item.id}.title`)}</h3>
+                <p className="text-gray-400">{t(`timeline.events.${item.id}.institution`)}</p>
               </div>
             </motion.div>
           ))}

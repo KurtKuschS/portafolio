@@ -25,3 +25,4 @@ dist-ssr
 *.sw?
 
 CODE_REVIEW.md
+.env*

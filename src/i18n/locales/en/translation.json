@@ -101,8 +101,12 @@
         "title": "Graduation",
         "institution": "Universidad de Magallanes"
       },
-      "2026": {
+      "2026-soporte-ti": {
         "title": "IT Support",
+        "institution": "Procesadora Barranco Amarillo"
+      },
+      "2026-analista-desarrollador": {
+        "title": "Systems Analyst & IT Developer",
         "institution": "Procesadora Barranco Amarillo"
       }
     }
