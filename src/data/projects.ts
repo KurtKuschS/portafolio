@@ -473,6 +473,49 @@ Incluye páginas dedicadas para servicios destacados (Pista LED, Robot Fotográf
       'Deploy en Vercel con Next.js 16 y React 19',
     ],
   },
+  {
+    id: 'barranco-amarillo-website',
+    title: 'Procesadora Barranco Amarillo — Sitio Corporativo',
+    shortDescription: 'Sitio corporativo bilingüe (ES/EN) de una procesadora de salmón en Punta Arenas: servicios, proceso productivo, sostenibilidad y certificaciones BAP, ASC y HACCP.',
+    fullDescription: `Sitio web corporativo de Procesadora Barranco Amarillo (PBA), planta de procesamiento de salmón para terceros en Punta Arenas, Región de Magallanes.
+
+Construido con Next.js (App Router) y React, con optimización de imágenes mediante next/image y versión bilingüe español/inglés. El sitio presenta a la empresa (historia, propósito, misión, visión y gobierno corporativo), detalla las 8 etapas del proceso productivo (recepción, lavado y selección, corte de cabeza, fileteado automático, recorte y clasificado, enfriado o congelado, empaque y despacho) y expone los cortes (trims) y calidades que procesa.
+
+Incluye secciones de sostenibilidad y tratamiento de aguas, certificaciones de calidad e inocuidad (BAP, ASC, HACCP) con vigencias, programas de Food Defense y Food Fraud, además de contacto, bolsa de trabajo, canal de denuncias y política de privacidad.`,
+    technologies: ['Next.js', 'React', 'next/image', 'i18n (ES/EN)', 'SEO'],
+    filters: ['React'],
+    image: 'public/projects/barranco-amarillo/home.png',
+    screenshots: [
+      'public/projects/barranco-amarillo/home.png',
+      'public/projects/barranco-amarillo/home-completa.png',
+      'public/projects/barranco-amarillo/nosotros.png',
+      'public/projects/barranco-amarillo/servicios.png',
+      'public/projects/barranco-amarillo/sostenibilidad.png',
+      'public/projects/barranco-amarillo/certificaciones.png',
+    ],
+    demo: 'https://www.barrancoamarillo.com/',
+    diagram: {
+      architecture: [
+        'Next.js App Router con páginas por sección',
+        'Contenido bilingüe ES/EN',
+        'Imágenes optimizadas con next/image',
+        'Páginas de contacto, trabajo y canal de denuncias',
+      ],
+      dataFlow: [
+        'Cada página (Inicio, Nosotros, Servicios, Sostenibilidad, Certificaciones, Contacto) se renderiza como ruta del App Router con su propio título y descripción SEO.',
+        'El contenido se sirve en español o inglés según el selector de idioma del header.',
+        'Las fotos de planta se entregan optimizadas y redimensionadas vía next/image.',
+        'Los CTA de cada sección llevan al formulario de contacto para solicitar cotización de procesamiento.',
+      ],
+    },
+    highlights: [
+      'Sitio corporativo bilingüe ES/EN para una procesadora de salmón en Punta Arenas',
+      'Página de servicios con las 8 etapas del proceso, cortes (trims), calidades y capacidad instalada de 50 ton/día',
+      'Sección de certificaciones BAP, ASC y HACCP con vigencias, más Food Defense y Food Fraud',
+      'Metadatos SEO por página y optimización de imágenes con next/image',
+      'Incluye bolsa de trabajo, canal de denuncias y política de privacidad',
+    ],
+  },
 ];
 
 export const getProjectById = (id: string): Project | undefined => {

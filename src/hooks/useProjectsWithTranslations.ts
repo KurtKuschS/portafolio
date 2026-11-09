@@ -32,6 +32,7 @@ export const useProjectsWithTranslations = (): Project[] => {
       'sales-inventory-admin-system',
       'plataforma-produccion-industrial',
       'milodon-producciones',
+      'barranco-amarillo-website',
     ];
 
     return projectIds.map((id) => {

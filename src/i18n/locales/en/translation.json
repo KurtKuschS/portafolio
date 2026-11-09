@@ -405,6 +405,33 @@
           "Quote buttons link directly to WhatsApp with the service/pack pre-selected."
         ]
       }
+    },
+    "barranco-amarillo-website": {
+      "title": "Procesadora Barranco Amarillo — Corporate Website",
+      "shortDescription": "Bilingual (ES/EN) corporate website for a salmon processing plant in Punta Arenas: services, production process, sustainability, and BAP, ASC and HACCP certifications.",
+      "fullDescription": "Corporate website for Procesadora Barranco Amarillo (PBA), a contract salmon processing plant in Punta Arenas, Magallanes region.\n\nBuilt with Next.js (App Router) and React, with image optimization through next/image and a bilingual Spanish/English version. The site introduces the company (history, purpose, mission, vision and corporate governance), details the 8 stages of the production process (reception, washing and selection, head cutting, automatic filleting, trimming and grading, chilling or freezing, packing and dispatch) and lists the trims and quality grades it processes.\n\nIt includes sustainability and water treatment sections, quality and food-safety certifications (BAP, ASC, HACCP) with validity dates, Food Defense and Food Fraud programs, plus contact, careers, whistleblower channel and privacy policy pages.",
+      "technologies": ["Next.js", "React", "next/image", "i18n (ES/EN)", "SEO"],
+      "highlights": [
+        "Bilingual ES/EN corporate site for a salmon processing plant in Punta Arenas",
+        "Services page with the 8 process stages, trims, quality grades and 50 ton/day installed capacity",
+        "Certifications section covering BAP, ASC and HACCP with validity dates, plus Food Defense and Food Fraud",
+        "Per-page SEO metadata and image optimization with next/image",
+        "Includes careers page, whistleblower channel and privacy policy"
+      ],
+      "diagram": {
+        "architecture": [
+          "Next.js App Router with per-section pages",
+          "Bilingual ES/EN content",
+          "Images optimized with next/image",
+          "Contact, careers and whistleblower pages"
+        ],
+        "dataFlow": [
+          "Each page (Home, About, Services, Sustainability, Certifications, Contact) renders as an App Router route with its own SEO title and description.",
+          "Content is served in Spanish or English based on the header language switcher.",
+          "Plant photos are delivered optimized and resized through next/image.",
+          "Each section's CTA leads to the contact page to request a processing quote."
+        ]
+      }
     }
   }
 }
